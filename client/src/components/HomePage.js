@@ -12,6 +12,7 @@ function HomePage() {
     <div>
       <h1>Public Page</h1>
       <h3>Public API Data</h3>
+      <h1>HELLO, WORLD!</h1>
       <p>{data && data.message}</p>
     </div>
   );
