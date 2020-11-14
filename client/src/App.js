@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import HomePage from "./components/HomePage";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
-import ProtectedExamplePage from "./components/ProtectedExamplePage";
+import ProtectedExamplePage from "./pages/ProtectedExamplePage";
 import { ProvideAuth } from "./util/authContext";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 function App() {
   return (
