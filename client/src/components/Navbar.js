@@ -13,7 +13,7 @@ function Navbar() {
         to="/"
         activeClassName="nav-link-active"
       >
-        Home
+        Discover
       </NavLink>
       {isLoggedIn || (
         <NavLink

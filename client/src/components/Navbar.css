@@ -1,21 +1,25 @@
 .nav {
-  background-color: #333;
+  background-color: rgb(1, 104, 27);
+ 
 }
 
 .nav-link {
-  padding: 1em 0.5em;
+  padding: 0.5em 0.5em;
+  margin: 2px;
   color: white;
   display: inline-block;
+  font-family: Lobster;
+  font-size: 20px;
 }
 
 .nav-link:hover {
-  background-color: #555;
+  background-color: rgb(58, 151, 46);
 }
 
 .nav-link:visited {
-  color: #aaa;
+  color: rgb(255, 255, 255);
 }
 
-.nav-link-active {
-  background-color: darkblue;
-}
+/* .nav-link-active {
+  background-color: rgb(3, 82, 27);
+} */
