@@ -4,6 +4,7 @@ import "../styles/Home.css";
 import Tree from "../images/Tree.svg";
 import Plant from "../images/Plant.png"
 import Community from "../images/Community.png";
+import {Link} from "react-router-dom";
 
 function HomePage() {
   const [data, setData] = useState(null);
@@ -21,8 +22,7 @@ function HomePage() {
         <p>Welcom to Plant(T) Ahead!
         Join us in creating a community of plant enthusiast. Discover new plant species and families and add them to your next  gardening project.
         View community input and advice in regards to growing certain plant types. Discover togeather learn together.
-        </p><br/>
-        <br></br>
+        </p>
       </section>
       
       <div className="PlantImages" >
@@ -30,8 +30,12 @@ function HomePage() {
       <img  src={Community} alt="Community"></img>
       </div>
       <div className="HomeButtons">
+        <Link to="/login">
       <button id="logInBtn">Login</button>
+        </Link>
+        <Link to="signup">
       <button id="joinBtn">Join</button>
+        </Link>
       </div>
       {/* <h3>Public API Data</h3>
       <h1>HELLO, WORLD!</h1>

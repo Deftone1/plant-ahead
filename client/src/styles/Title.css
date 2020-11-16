@@ -1,0 +1,25 @@
+
+ .MainTitle  {
+
+    display: flex;
+    margin: auto;
+   align-items: center;
+    font-family: Lobster;
+    /* background-color: red; */
+    max-width: fit-content;
+    max-height: 70px;
+    margin-top: 45px;
+  
+}
+
+.MainTitle h1{
+    font-size: larger;
+}
+.MainTitle img{
+    max-height: 100px;
+}
+
+
+
+
+

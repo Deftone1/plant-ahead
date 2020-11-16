@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../util/authContext";
 import API from "../util/API";
+import Main from "../pages/Main"
 
 function ProtectedExamplePage() {
   const { logout, user } = useAuth();
