@@ -17,14 +17,17 @@ section {
     text-align: center;
     width:45%;
     font-size: 24px;
-    font-family: open sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(255, 255, 255, .7);
+    border-radius: 25px;
+   
 }
 
 
 .PlantImages {
     display: flex;
     justify-content: center;
-    margin-top: 5em;
+    margin-top: 3em;
     margin-bottom: 0;
     padding-bottom: 0;
     text-align: center;
