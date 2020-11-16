@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../util/authContext";
+import plantAlt from "../images/plants-2.jpg";
+import "../styles/signup-login.css";
 
 const styles = {
   wrapper: {
@@ -48,31 +50,38 @@ function SignupPage() {
     }
   };
   return (
-    <div style={styles.wrapper}>
+    <div>
       <h1>Signup</h1>
-      <div>{isPending && "Loading..."}</div>
-      <form style={styles.form} onSubmit={handleSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          value={formState.username}
-          onChange={handleInputChange}
-        />
-        <br />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={formState.password}
-          onChange={handleInputChange}
-        />
-        <button type="submit" style={styles.submitButton}>
-          Submit
-        </button>
-      </form>
+      <div className="signup-login" style={styles.wrapper}>
+        <div>{isPending && "Loading..."}</div>
+        <form style={styles.form} onSubmit={handleSubmit}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value={formState.username}
+            onChange={handleInputChange}
+          />
+          <br />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={formState.password}
+            onChange={handleInputChange}
+          />
+          <button type="submit" style={styles.submitButton}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <img
+        className="plantImageTwo"
+        src={plantAlt}
+        alt="plant-ahead-welcome"
+      ></img>
     </div>
   );
 }
