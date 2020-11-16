@@ -44,14 +44,14 @@ function HomePage() {
         <img src={Plant} alt="Plant"></img>
         <img src={Community} alt="Community"></img>
       </div>
-      <div className="HomeButtons">
+      {/* <div className="HomeButtons">
         <Link to="/login">
           <button id="logInBtn">Login</button>
         </Link>
         <Link to="signup">
           <button id="joinBtn">Join</button>
         </Link>
-      </div>
+      </div> */}
       {/* <h3>Public API Data</h3>
       <h1>HELLO, WORLD!</h1>
       <p>{data && data.message}</p> */}

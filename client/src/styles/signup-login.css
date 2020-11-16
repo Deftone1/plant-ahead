@@ -2,11 +2,11 @@ body {
     background: radial-gradient(  at 50px 50px,rgba(228, 228, 228, 1), rgba(72, 53, 4, 0.69));
 }
 
-.signup-login {
+.form-section {
    
     /* justify-content: center; */
-    margin: 0 auto;
-    /* text-align: center; */
+    /* margin: 0 auto; */
+    text-align: center;
     
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
