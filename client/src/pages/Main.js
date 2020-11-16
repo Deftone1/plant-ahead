@@ -2,7 +2,7 @@ import React from "react";
 import Title from "../components/Title";
 import { useEffect, useState } from "react";
 import { useAuth } from "../util/authContext";
-import  "bootstrap/dist/css/bootstrap.css";
+// import  "bootstrap/dist/css/bootstrap.css";
 import API from "../util/API";
 
 function Main() {
