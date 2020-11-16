@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import API from "../util/API";
 import "../styles/Home.css";
 import Tree from "../images/Tree.svg";
+import plantMain from "../images/plant-welcome.png";
 import Plant from "../images/Plant.png"
 import Community from "../images/Community.png";
 import {Link} from "react-router-dom";
@@ -20,11 +21,13 @@ function HomePage() {
       <header>
         <h1>Plan<img src={Tree} alt="Tree"></img> Ahead</h1>
       </header>
+      <img src={plantMain} alt="plant-ahead-welcome"></img>
+      <br></br><br></br>
       <section>
-        <p>Welcom to Plant(T) Ahead!
-        Join us in creating a community of plant enthusiast. Discover new plant species and families and add them to your next  gardening project.
-        View community input and advice in regards to growing certain plant types. Discover togeather learn together.
-        </p>
+        <p>Welcome to Plan(t) Ahead.<br></br><br></br>
+        Join us in creating a community of plant enthusiasts. Discover new plant species and families and add them to your next gardening project.
+        View community input and advice in regards to growing certain plant types. <br></br>
+        <h4>DISCOVER TOGETHER - LEARN TOGETHER.</h4></p>
       </section>
       
       <div className="PlantImages" >
