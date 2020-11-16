@@ -36,6 +36,15 @@ function Navbar() {
       {isLoggedIn && (
         <NavLink
           className="nav-link"
+          to="/protected/main"
+          activeClassName="nav-link-active"
+        >
+          Main
+        </NavLink>
+      )}
+      {isLoggedIn && (
+        <NavLink
+          className="nav-link"
           to="/protected/example"
           activeClassName="nav-link-active"
         >

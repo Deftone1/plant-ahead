@@ -51,6 +51,7 @@ function LoginPage() {
   };
   return (
     <div>
+      <div className="form-section">
       <h1>Login</h1>
       <div className="signup-login" style={styles.wrapper}>
         <div>{isPending && "Loading..."}</div>{" "}
@@ -76,6 +77,7 @@ function LoginPage() {
             Submit
           </button>
         </form>
+      </div>
       </div>
       <img
         className="plantImageTwo"
