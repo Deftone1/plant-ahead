@@ -39,7 +39,7 @@ function Navbar() {
           to="/protected/example"
           activeClassName="nav-link-active"
         >
-          Protected
+          MyProjects
         </NavLink>
       )}
       {isLoggedIn && <button onClick={logout}>Logout</button>}

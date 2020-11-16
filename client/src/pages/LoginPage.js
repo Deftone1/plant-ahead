@@ -39,7 +39,7 @@ function LoginPage() {
     } else {
       setIsPending(true);
       login({ username, password })
-        .then(() => history.push("/protected/example"))
+        .then(() => history.push("/protected/main"))
         .catch((error) => {
           console.log(error);
           alert("An error occurred.");
