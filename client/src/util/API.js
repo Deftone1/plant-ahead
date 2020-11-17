@@ -6,6 +6,8 @@ const getProtectedExample = () => axios.get("/api/protected");
 // example api request for public data
 const getPublicExample = () => axios.get("/api/unprotected");
 
-const API = { getProtectedExample, getPublicExample };
+const trefle = (plant) => axios.get("/api/protected/trefle/" +plant)
+
+const API = { getProtectedExample, getPublicExample, trefle };
 
 export default API;

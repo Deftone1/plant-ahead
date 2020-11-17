@@ -5,6 +5,9 @@ const mongoose = require("mongoose");
 const authController = require("./controllers/auth.controller");
 const { handleErrors } = require("./middleware/error.middleware");
 const { hasValidToken } = require("./middleware/auth.middleware");
+const fetch = require("node-fetch")
+const axios = require("axios")
+const { json } = require("express");
 
 if (!process.env.SERVER_SECRET) {
   // SERVER_SECRET env var is required for auth
@@ -32,6 +35,24 @@ app.get("/api/protected", hasValidToken, (req, res) => {
   // the hasValidToken middleware decodes the payload and adds a "user" property to the request.
   console.log(req.user);
   res.json({ message: "protected data" });
+});
+
+/* app.get("/api/protected/trefle/:tree", (req, res) => {
+  let tree = req.params.tree
+  const url = "https://trefle.io/api/v1/plants/search?token="+process.env.TOKEN+"&q="+tree
+  axios.get(url).then(result=>{
+    res.json(result.data)
+  })
+}); */
+
+app.get("/api/protected/trefle/:tree",  (req, res) => {
+  let tree = req.params.tree
+  let results
+(async () => {
+	const response = await fetch("https://trefle.io/api/v1/plants/search?token="+process.env.TOKEN+"&q="+tree);
+   results = await response.json();
+	res.json(results.data)
+})();
 });
 
 app.use(handleErrors);
