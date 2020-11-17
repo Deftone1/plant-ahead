@@ -14,7 +14,10 @@ const ProvideAuth = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    AuthService.initAuth();
+    const user = AuthService.initAuth();
+    setUser(user);
+    
+
   }, []);
 
   const login = ({ username, password }) => {

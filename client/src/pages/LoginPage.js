@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../util/authContext";
 import plantAlt from "../images/plants-2.jpg";
+import {Redirect} from "react-router-dom";
 import "../styles/signup-login.css";
 
 const styles = {
@@ -19,7 +20,7 @@ const styles = {
 };
 
 function LoginPage() {
-  const { login } = useAuth();
+  const { login, isLoggedIn } = useAuth();
   const history = useHistory();
   const [formState, setFormState] = useState({ username: "", password: "" });
   const [isPending, setIsPending] = useState(false);
@@ -49,6 +50,9 @@ function LoginPage() {
         });
     }
   };
+  if(isLoggedIn){
+    return <Redirect to = "/protected/main" />
+  } 
   return (
     <div>
       <div className="form-section">

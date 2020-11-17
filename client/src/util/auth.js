@@ -32,6 +32,13 @@ const initAuth = () => {
   axios.interceptors.request.use(authRequestMiddleware, (err) =>
     Promise.reject(err)
   );
+  
+  if(isLoggedIn()){
+    const {username, id}= decodeToken();
+    return {username, id};
+    
+  }
+  return null;
 };
 
 const login = ({ username, password }) => {
