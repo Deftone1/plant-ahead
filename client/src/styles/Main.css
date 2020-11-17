@@ -1,40 +1,40 @@
 .MainPage {
-    background-color: red;
-    height: 100vh;
+    /* background-color: red; */
+    /* height: 100vh; */
 }
 
 .MainPageContainer {
-    background-color: green;
-    height: 80vh;
+    /* background-color: green; */
+    /* height: 80vh; */
     
     
 }
 
 .leftContentColumn {
-    background-color: grey;
+    /* background-color: grey; */
 
 }
 
 .mainSection {
-    background-color: rgb(4, 100, 124);
+    
     height: 30vh;
 }
 .imageRow {
-    background-color: rgb(4, 124, 104);
-    height: 30vh;
+    
+    height: 30vh; 
 }
 .detailRow {
-    background-color: rgb(30, 78, 168);
-    height: 20vh;
+    /* background-color: rgb(30, 78, 168);
+    height: 20vh; */
 }
 .getStartedLists{
-    height: 15vh;
+    /* height: 15vh; */
 }
 
 .MainPage ul {
 
-    height: 200px;
+    /* height: 200px;
     overflow: hidden;
-    overflow-y: scroll;
+    overflow-y: scroll; */
 }
 
