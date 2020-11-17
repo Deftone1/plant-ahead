@@ -30,7 +30,9 @@ function App() {
           <ProtectedRoute path="/protected/main">
             <Main/>
           </ProtectedRoute>
-          
+          <ProtectedRoute path="/protected/projects">
+            <h1>Projects</h1>
+          </ProtectedRoute>
         </Switch>
       </Router>
     </ProvideAuth>
