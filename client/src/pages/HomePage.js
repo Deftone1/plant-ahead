@@ -35,8 +35,8 @@ function HomePage() {
           Join us in creating a community of plant enthusiasts. Discover new
           plant species and families and add them to your next gardening
           project. View community input and advice in regards to growing certain
-          plant types. <br></br>
-          <h4>DISCOVER TOGETHER - LEARN TOGETHER.</h4>
+          plant types. <br/>
+        DISCOVER TOGETHER - LEARN TOGETHER.
         </p>
       </section>
 

@@ -7,7 +7,7 @@ function Title() {
     <div >
       <header className="d-flex justify-content-center align-items-baseline">
       <h1>Plan</h1>
-      <img src={Tree} alt="Tree"></img>
+      <img src={Tree} alt="Tree"/>
       <h1>Ahead</h1>
 
       </header>
