@@ -29,14 +29,14 @@ function HomePage() {
       <br></br>
       <br></br>
       <section>
-        <p><div className="welcome-font">
-          Welcome to Plan(t) Ahead.</div>
+        <p><span className="welcome-font">
+          Welcome to Plan(t) Ahead.</span><br></br>
           
           Join us in creating a community of plant enthusiasts. Discover new
           plant species and families and add them to your next gardening
           project. View community input and advice in regards to growing certain
           plant types. <br/><br></br>
-        Discover together, learn together.
+        <span className="slogan">Discover together, learn together</span>
         </p>
       </section>
 
