@@ -23,6 +23,8 @@ function MyProjects() {
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
       </header>
+
+      {/* garden cards here */}
     </div>
   );
 }
