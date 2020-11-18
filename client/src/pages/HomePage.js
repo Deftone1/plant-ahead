@@ -30,7 +30,11 @@ function HomePage() {
       <br></br>
       <section>
         <p><span className="welcome-font">
+<<<<<<< HEAD
           Welcome to Plan(t) Ahead.</span><br></br>
+=======
+          Welcome to Plan(t) Ahead.</span>
+>>>>>>> 6b8ebf46978d4da4dd81f11171e12afde2e8df08
           
           Join us in creating a community of plant enthusiasts. Discover new
           plant species and families and add them to your next gardening
