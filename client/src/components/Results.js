@@ -1,5 +1,4 @@
 import React from "react"
-import Plant from "../images/Plant.png"
 import "../styles/Results.css";
 
 // changed this to a function not a variable

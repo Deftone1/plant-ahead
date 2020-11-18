@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../util/authContext";
-import plantAlt from "../images/plants-2.jpg";
+import leaves from "../images/leaves.jpg";
 import {Redirect} from "react-router-dom";
 import "../styles/signup-login.css";
 
@@ -85,7 +85,7 @@ function LoginPage() {
       </div>
       <img
         className="plantImageTwo"
-        src={plantAlt}
+        src={leaves}
         alt="plant-ahead-welcome"
       ></img>
     </div>
