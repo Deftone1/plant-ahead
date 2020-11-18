@@ -57,7 +57,7 @@ function SignupPage() {
         <div>{isPending && "Loading..."}</div>
         <form className="signup-login" style={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
-          <input
+          <input className="input-font"
             type="text"
             name="username"
             id="username"
@@ -66,7 +66,7 @@ function SignupPage() {
           />
           <br />
           <label htmlFor="password">Password</label>
-          <input
+          <input className="input-font"
             type="password"
             name="password"
             id="password"

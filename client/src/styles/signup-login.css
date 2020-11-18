@@ -6,7 +6,7 @@
     text-align: center;
     font-size: 24px;
     font-family: Lobster;
-    border: solid black;
+    border: solid black 3px;
     padding-bottom: 20px;
 }
 
@@ -22,4 +22,9 @@
 .plantImageTwo {
     width: 100%;
     opacity: 40%;
+}
+
+.input-font {
+    font-family: arial;
+    font-size: 17px;
 }
