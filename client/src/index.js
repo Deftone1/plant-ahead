@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import  "bootstrap/dist/css/bootstrap.css";
+import "./fonts/Lobster/Lobster-Regular.ttf"
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "./fonts/Lobster/Lobster-Regular.ttf"
-import  "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   <React.StrictMode>
