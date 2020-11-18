@@ -51,7 +51,7 @@ function Navbar() {
           MyProjects
         </NavLink>
       )}
-      {isLoggedIn && <button onClick={logout}>Logout</button>}
+      {isLoggedIn && <button className="navbar-nav ml-auto m-2 p-2" onClick={logout}>Logout</button>}
     </nav>
   );
 }
