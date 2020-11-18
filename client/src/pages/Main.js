@@ -4,13 +4,40 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../util/authContext";
 import "../styles/Main.css"
 import Plant from "../images/Plant.png"
-
+import Results from "../components/Results"
+import SearchForm from "../components/SearchForm"
 import API from "../util/API";
 
 function Main() {
   const { logout, user } = useAuth();
-
-
+  const [search, setsearch] = useState("")
+  const [results, setresults] = useState([])
+  const [trees, settrees] = useState([])
+  const handleInputChange = event => {
+    setsearch(event.target.value)
+}
+  const handleFormSubmit = event => {
+    event.preventDefault();
+    API.trefle(search)
+        .then(res => {
+            console.log(res.data)
+            let results = res.data
+            results = results.map(result => {
+                result = {
+                    key: result.id,
+                    name: result.common_name,
+                    family: result.family_common_name,
+                    image_url: result.image_url,
+                    genus: result.genus
+                }
+            return result; 
+            })
+            settrees(results)
+        })
+        .catch(err => {
+            throw err
+        })
+}
 
   return (
     <div className="MainPage mb-5">
@@ -65,73 +92,16 @@ function Main() {
               <h4 className="text-center">Search For Your Plant Below<br />
               Filer By:</h4><br />
               {/* Checklist goes here */}
+              <SearchForm
+                handleFormSubmit={handleFormSubmit}
+                handleInputChange={handleInputChange}
+              />
 
-              <form >
-                <div className="form-check form-check-inline">
-                  <input className="form-check-input" type="checkbox" id="commonName" value="option1" />
-                  <label className="form-check-label" htmlFor="inlineCheckbox1">Common-Name</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input className="form-check-input" type="checkbox" id="edible" value="option2" />
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">Edible</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input className="form-check-input" type="checkbox" id="height" value="option2" />
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">Height</label>
-                </div>
-                <div className="form-check form-check-inline">
-                  <input className="form-check-input" type="checkbox" id="species" value="option2" />
-                  <label className="form-check-label" htmlFor="inlineCheckbox2">Species</label>
-                </div>
-                <div className="form-group d-flex   ">
-                  <input type="password" className="form-control" id="exampleInputPassword1" />
-                  <button type="submit" className="btn btn-primary ml-4">Submit</button>
-                </div>
-
-              </form>
             </div>
           </section>
           {/* Image section starts here */}
-          <section className="row imageRow ">
-
-            <div className="col-md-6 mx-auto d-flex  justify-content-center align-items-center border shadow">
-              <div className="shadow card ">
-                <img src={Plant} className=" border rounded  img-thumbnail img-fluid " alt="Baby-Plant" />
-                {/* Find a unique way to add this, maybe a card flip? */}
-                {/* <div className="card-img-overlay">
-                  <h5>Common Name</h5>
-                  <p>Scientific Name</p>
-                  <p>Scientific Name</p>
-                </div> */}
-              </div>
-
-              <div className="ml-5 mr-5 shadow">
-                <img src={Plant} className=" border rounded  img-thumbnail img-fluid" alt="Baby-Plant" />
-              </div>
-
-              <div className="shadow">
-                <img src={Plant} className=" border rounded  img-thumbnail img-fluid" alt="Baby-Plant" />
-              </div>
-            </div>
-
-          </section>
-          {/* Details Section */}
-          <section className="row detailRow ">
-
-            <div className="col ">
-              <div className="card shadow mx-auto mt-4" >
-                {/* Profile */}
-                <div className="card-body ">
-                  <h5>How To grow</h5>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sagittis nunc. Ut in massa a eros porta fringilla. Praesent ante urna, euismod ut viverra sed, viverra at eros.
-                  Aliquam pulvinar ex sed sapien blandit efficitur. Duis aliquam lacus vulputate, aliquam elit sit amet, dignissim magna. Vivamus rhoncus mattis purus, vitae lacinia ipsum commodo nec. Quisque ut commodo ante.
-                  Proin quis tellus turpis. Ut posuere mauris ac lectus fringilla consectetur. Sed et dolor venenatis, aliquet purus varius, iaculis ante. Ut egestas mi quis purus volutpat dictum. Nulla vulputate tristique quam.
-                  </p>
-
-                </div>
-              </div>
-
-            </div>
+          <section>
+            <Results trees={trees}/>
           </section>
 
       
