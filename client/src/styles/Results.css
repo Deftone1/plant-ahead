@@ -1,21 +1,7 @@
-/* 
 
-.searchTitle {
-    position: absolute;
-    top: 10px;
-}
-
-*/
-/* .resultspPlant {
-    max-height: 50px;
-    width: 50px;
-    background-color: red;
-    object-fit: contain;
-}
- */
 
  .searchResultImages {
      overflow: hidden;
      overflow-y: scroll;
-     max-height: 40vh;
+     max-height: 45vh;
  }
