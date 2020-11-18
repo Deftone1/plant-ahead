@@ -1,6 +1,4 @@
 import React from "react"
-import { Carousel } from "react-bootstrap"
-import Plant from "../images/Plant.png"
 import "../styles/Results.css";
 
 // changed this to a function not a variable
