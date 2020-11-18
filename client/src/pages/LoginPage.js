@@ -83,11 +83,11 @@ function LoginPage() {
         </form>
       </div>
       </div>
-      <img
+      <div><img
         className="plantImageTwo"
         src={leaves}
         alt="plant-ahead-welcome"
-      ></img>
+      ></img></div>
     </div>
   );
 }
