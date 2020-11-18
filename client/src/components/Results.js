@@ -1,8 +1,4 @@
 import React from "react"
-<<<<<<< HEAD
-=======
-import Plant from "../images/Plant.png"
->>>>>>> 4ff51d0da40c14dff7c2b9c89fd0a88606f9e637
 import "../styles/Results.css";
 
 // changed this to a function not a variable
