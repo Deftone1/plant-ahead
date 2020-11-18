@@ -4,23 +4,21 @@ header {
     text-align: center;
     font-family: Lobster;
     font-size: 48px;
-    
 }
- .HomePage section {
+
+.HomePage section {
     display: flex;
     justify-content: center;
     margin: auto;
     text-align: center;
-    width:45%;
+    width: 55%;
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(255, 255, 255, .7);
     border-radius: 25px;
-   
 }
 
-
- .PlantImages {
+.PlantImages {
     display: flex;
     justify-content: center;
     margin-top: 3em;
@@ -28,12 +26,10 @@ header {
     padding-bottom: 0;
     text-align: center;
     transform: translate(-5rem);
-    
 }
 
 .PlantImages img {
     padding-left: 10rem;
-    
 }
 
 .HomeButtons {
@@ -42,7 +38,6 @@ header {
     margin-left: 39%;
     margin-right: 39%;
     justify-content: space-between;
-    
 }
 
 .plantImageHeader {
@@ -51,17 +46,16 @@ header {
     border: 3px solid rgb(0, 0, 0);
 }
 
- button {
+button {
     font-family: Lobster;
     font-size: 20px;
     color: black;
-    
 }
-.HomePage{
-    background: radial-gradient(  at 50px 50px,rgba(228, 228, 228, 1), rgba(72, 53, 4, 0.69));
+
+.HomePage {
+    background: radial-gradient( at 50px 50px, rgba(228, 228, 228, 1), rgba(72, 53, 4, 0.69));
 }
 
 .welcome-font {
     font-family: Lobster;
-
 }

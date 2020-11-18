@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
 import Main from "./pages/Main"
+import MyProjects from "./pages/MyProjects";
 import ProtectedExamplePage from "./pages/ProtectedExamplePage";
 import { ProvideAuth } from "./util/authContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
@@ -31,7 +32,7 @@ function App() {
             <Main/>
           </ProtectedRoute>
           <ProtectedRoute path="/protected/projects">
-            <h1>Projects</h1>
+            <MyProjects/>
           </ProtectedRoute>
         </Switch>
       </Router>
