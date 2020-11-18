@@ -23,12 +23,12 @@ function Results(props) {
             //     </div>
 
             // </div>
-            <div class="col mb-4">
-                <div class="card">
-                    <img src={tree.image_url} class="card-img-top" alt="Test" />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div className="col mb-4 " key={tree.key} >
+                <div className="card">
+                    <img src={tree.image_url} className="card-img-top mx-auto" style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} alt="Test" />
+                    <div className="card-body">
+                        <h5 className="card-title">Card title</h5>
+                        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@ function Results(props) {
                 </div>
 
 
-                <div class="row row-cols-1 row-cols-md-3">
+                <div className="row row-cols-1 row-cols-md-3">
                     {plantList}
 
                 </div>
