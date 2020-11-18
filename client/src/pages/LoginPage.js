@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth } from "../util/authContext";
-import leaves from "../images/leaves.jpg";
+import leaves from "../images/leaves.png";
 import {Redirect} from "react-router-dom";
 import "../styles/signup-login.css";
 
