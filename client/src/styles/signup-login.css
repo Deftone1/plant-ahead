@@ -3,15 +3,20 @@
 } */
 
 .form-section {
-   
-    /* justify-content: center; */
-    /* margin: 0 auto; */
     text-align: center;
-    
     font-size: 24px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   
+    font-family: Lobster;
+    border: solid black;
+    padding-bottom: 20px;
+}
 
+.signup-login {
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding: 20px;
+    border: solid rgba(187, 190, 187, 0.5) 3px;
+   
 }
 
 .plantImageTwo {
