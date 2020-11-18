@@ -13,3 +13,9 @@
     object-fit: contain;
 }
  */
+
+ .searchResultImages {
+     overflow: hidden;
+     overflow-y: scroll;
+     max-height: 40vh;
+ }

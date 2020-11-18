@@ -25,10 +25,11 @@ function Results(props) {
             // </div>
             <div className="col mb-4 " key={tree.key} >
                 <div className="card">
-                    <img src={tree.image_url} className="card-img-top mx-auto" style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} alt="Test" />
+                    <img src={tree.image_url} className="card-img-top mx-auto border rounded img-thumbnail img-fluid" style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} alt="Test" />
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h5 className="card-title">{tree.name}</h5>
+                        <p className="card-text">{tree.family}</p>
+                        <p className="card-text">{tree.genus}</p>
                     </div>
                 </div>
             </div>
@@ -96,7 +97,7 @@ function Results(props) {
                 </div>
 
 
-                <div className="row row-cols-1 row-cols-md-3">
+                <div className="row row-cols-1 row-cols-md-3 searchResultImages">
                     {plantList}
 
                 </div>
