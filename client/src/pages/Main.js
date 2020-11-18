@@ -100,8 +100,9 @@ function Main() {
             </div>
           </section>
           {/* Image section starts here */}
-          <section>
-            <Results trees={trees}/>
+          <section className="row imageRow" >
+            
+            <Results trees={trees}  />
           </section>
 
       
