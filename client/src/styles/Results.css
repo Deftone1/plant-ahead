@@ -1,4 +1,7 @@
-.plant{
-    height: 200px;
-    width: 200px;
-}
+
+
+ .searchResultImages {
+     overflow: hidden;
+     overflow-y: scroll;
+     max-height: 45vh;
+ }
