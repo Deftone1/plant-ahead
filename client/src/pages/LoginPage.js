@@ -57,11 +57,11 @@ function LoginPage() {
     <div>
       <div className="form-section">
       <h1>Login</h1>
-      <div className="signup-login" style={styles.wrapper}>
+      <div style={styles.wrapper}>
         <div>{isPending && "Loading..."}</div>{" "}
-        <form disabled={isPending} style={styles.form} onSubmit={handleSubmit}>
+        <form className="signup-login" disabled={isPending} style={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
-          <input
+          <input className="input-font"
             type="text"
             name="username"
             id="username"
@@ -70,7 +70,7 @@ function LoginPage() {
           />
           <br />
           <label htmlFor="password">Password</label>
-          <input
+          <input className="input-font"
             type="password"
             name="password"
             id="password"

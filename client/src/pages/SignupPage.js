@@ -51,12 +51,13 @@ function SignupPage() {
   };
   return (
     <div>
+      <div className ="form-section">
       <h1>Signup</h1>
-      <div className="signup-login" style={styles.wrapper}>
+      <div style={styles.wrapper}>
         <div>{isPending && "Loading..."}</div>
-        <form style={styles.form} onSubmit={handleSubmit}>
+        <form className="signup-login" style={styles.form} onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
-          <input
+          <input className="input-font"
             type="text"
             name="username"
             id="username"
@@ -65,7 +66,7 @@ function SignupPage() {
           />
           <br />
           <label htmlFor="password">Password</label>
-          <input
+          <input className="input-font"
             type="password"
             name="password"
             id="password"
@@ -76,6 +77,7 @@ function SignupPage() {
             Submit
           </button>
         </form>
+      </div>
       </div>
       <img
         className="plantImageTwo"
