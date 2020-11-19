@@ -4,11 +4,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 function SavedPlants(props) {
   const { plants, gardens, addplanttogarden } = props;
-  const gardenslist = gardens.map((garden) => (
-    <Dropdown.Item href="#/action-1" data-garden={garden.id}>
-      {garden.name}
-    </Dropdown.Item>
-  ));
 
   const plantList = plants.map((plant) => (
     <div>
@@ -57,7 +52,6 @@ function SavedPlants(props) {
         </div>
       </div>
     </div>
-  );
+)
 }
-
 export default SavedPlants;

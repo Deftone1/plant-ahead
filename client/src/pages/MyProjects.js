@@ -54,7 +54,9 @@ const loadGardens = (user_id) => {
         loadGardens(user.id)}
         )
   }
-
+  const addplanttogarden = (garden, plant) =>{
+    API.savePlanttoGarden(garden,plant)
+  }
   return (
     <div className="MyProjects">
       <Title />
@@ -67,7 +69,7 @@ const loadGardens = (user_id) => {
 
       <div className="row">
   <GardenCard gardens={gardens}/>
-  <SavedPlants plants={plants} removeplant={removeplant}/>
+  <SavedPlants plants={plants} gardens={gardens}removeplant={removeplant} addplanttogarden={addplanttogarden}/>
   <form className="col">
         <div className="form-group">
           <div className="create-garden">
