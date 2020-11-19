@@ -4,7 +4,12 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 
 function SavedPlants(props) {
-  const { plants } = props;
+  const { plants, gardens, addplanttogarden} = props;
+  const gardenslist = gardens
+    .map((garden)=> 
+    <Dropdown.Item href="#/action-1"data-garden={garden.id}>{garden.name}</Dropdown.Item>
+    )
+
   const plantList = plants
     .map((plant) => (
 
@@ -18,9 +23,9 @@ function SavedPlants(props) {
 
           </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#/action-1">Garden1</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Garden2</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Garden3</Dropdown.Item>
+             {gardens.map((garden)=> 
+          <Dropdown.Item href="#/action-1" onClick={() => addplanttogarden(garden._id,plant._id)}>{garden.name}</Dropdown.Item>
+            )}
             </Dropdown.Menu>
           </Dropdown>
 

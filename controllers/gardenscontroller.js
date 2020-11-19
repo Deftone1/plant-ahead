@@ -40,4 +40,10 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  addplant: function(req, res){
+    db.Garden
+      .findOneAndUpdate({_id:req.params.id}, {$push:{plants:req.params.plants_id}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
 };
