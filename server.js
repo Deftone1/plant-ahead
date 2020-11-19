@@ -8,6 +8,7 @@ const { hasValidToken } = require("./middleware/auth.middleware");
 const fetch = require("node-fetch")
 const axios = require("axios")
 const { json } = require("express");
+const routes = require("./routes")
 
 if (!process.env.SERVER_SECRET) {
   // SERVER_SECRET env var is required for auth
@@ -54,6 +55,8 @@ app.get("/api/protected/trefle/:tree",  (req, res) => {
 	res.json(results.data)
 })();
 });
+
+app.use(routes)
 
 app.use(handleErrors);
 

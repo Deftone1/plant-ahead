@@ -13,6 +13,9 @@ function Main() {
   const [search, setsearch] = useState("")
   const [results, setresults] = useState([])
   const [trees, settrees] = useState([])
+  const [userdata,setuserdata]=useState(null)
+
+
   const handleInputChange = event => {
     setsearch(event.target.value)
 }
@@ -28,7 +31,8 @@ function Main() {
                     name: result.common_name,
                     family: result.family_common_name,
                     image_url: result.image_url,
-                    genus: result.genus
+                    genus: result.genus,
+                    user_id:user.id
                 }
             return result; 
             })
@@ -38,6 +42,10 @@ function Main() {
             throw err
         })
 }
+  const saveplantbutton = event => {
+    event.preventDefault();
+
+  }
 
   return (
     <div className="MainPage mb-5">
