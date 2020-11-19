@@ -4,11 +4,13 @@ import axios from "axios";
 const getProtectedExample = () => axios.get("/api/protected");
 
 const savePlant =(plantData) => axios.post("/api/plants/", plantData)
+
+const getPlantbyid = (id) => axios.get("api/plants/user/"+id)
 // example api request for public data
 const getPublicExample = () => axios.get("/api/unprotected");
 
 const trefle = (plant) => axios.get("/api/protected/trefle/" +plant)
 
-const API = { getProtectedExample, getPublicExample, trefle, savePlant };
+const API = { getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyid };
 
 export default API;

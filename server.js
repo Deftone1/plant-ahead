@@ -39,13 +39,8 @@ app.get("/api/protected", hasValidToken, (req, res) => {
   res.json({ message: "protected data" });
 });
 
-/* app.get("/api/protected/trefle/:tree", (req, res) => {
-  let tree = req.params.tree
-  const url = "https://trefle.io/api/v1/plants/search?token="+process.env.TOKEN+"&q="+tree
-  axios.get(url).then(result=>{
-    res.json(result.data)
-  })
-}); */
+
+
 
 
 app.get("/api/protected/trefle/:tree",  (req, res) => {
