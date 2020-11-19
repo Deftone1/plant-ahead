@@ -10,13 +10,18 @@ import Tree from "../images/Tree.svg";
 import leaves from "../images/leaves.png";
 
 
+
 function MyProjects() {
   const [data, setData] = useState(null);
-  // useEffect(() => {
-  //   API.getPublicExample().then((response) => {
-  //     setData(response.data);
-  //   });
-  // }, []);
+  const { logout, user } = useAuth();
+  const [plants, setplants] = useState([]);
+
+  let user_id =user.id
+   useEffect(() => {
+    API.getPlantbyid(user_id).then((response) => {
+      setplants(response.data);
+     });
+   }, []);
 
   return (
     <div className="MyProjects">
@@ -30,7 +35,7 @@ function MyProjects() {
 
       <div className="row">
   <GardenCard />
-  <SavedPlants />
+  <SavedPlants plants={plants}/>
 </div>
 <div><img
         className="plantImageTwo"
