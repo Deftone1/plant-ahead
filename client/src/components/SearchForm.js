@@ -24,6 +24,7 @@ return(
       <input type="text" 
       className="form-control" 
       placeholder="Search for a plant"
+      value={props.searchPlant}
       onChange={props.handleInputChange}
        />
       <button type="submit"

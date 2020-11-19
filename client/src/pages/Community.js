@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Title from "../components/Title";
 import SearchForm from "../components/SearchForm"
 import Tree from "../images/Tree.svg";
 // Plant image below for testing only
 import Plant from "../images/Plant.png"
+import FindUserInputResults from "../components/FindUserInputResults";
+
 function Community() {
+
+    const [searchPlant, setSearchPlant] = useState("");
+    useEffect(()=> {
+        
+    })
 
     const handleFormSubmit = event => {
         event.preventDefault();
 
     }
 
-    const handleInputChange = event => {
-        event.preventDefault();
-        // insert code here to query for plant in database saved by users
-    }
+    const handleInputChange = (event) => {setSearchPlant(event.target.value)}
 
     return (
         <div className="">
@@ -39,7 +43,8 @@ function Community() {
                     {/* Checklist goes here */}
                     <SearchForm
                     // handleFormSubmit={handleFormSubmit}
-                    // handleInputChange={handleInputChange}
+                    handleInputChange={handleInputChange}
+                    value = {searchPlant}
                     />
 
                 </div>
@@ -47,7 +52,7 @@ function Community() {
 
             <section className="row  mx-auto justify-content-md-center px-5">
                 {/* Plant List from search listed in this card */}
-                <div className="col-md-3 col-xs-5 pt-2  ">
+                {/* <div className="col-md-3 col-xs-5 pt-2  ">
                     <div className=" d-flex justify-content-center   ">
                         <div className="card shadow " style={{ width: '25rem' }}>
 
@@ -86,7 +91,8 @@ function Community() {
 
 
                     </div>
-                </div>
+                </div> */}
+                <FindUserInputResults/>
                 <div className="col-md-7 card">
                     <div className=" row d-flex  pb-4 ">
                         <div className=" col-md-11 card shadow mx-auto mt-2" >
