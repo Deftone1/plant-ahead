@@ -75,7 +75,7 @@ function Main() {
                   <li className="list-group-item">Vegetable-Garden</li>
                   <li className="list-group-item">Rose-Garden</li>
                   <li className="list-group-item">Cactus-Garden</li>
-                  <li className="list-group-item">Succubus-Garden</li>
+                  <li className="list-group-item">Succulent-Garden</li>
                 </ul>
 
               </div>
