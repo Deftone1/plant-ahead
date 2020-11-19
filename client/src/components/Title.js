@@ -1,6 +1,6 @@
 import React from "react";
 // import "../styles/Title.css";
-import Tree from "../images/Tree.svg";
+
 import plantMain from "../images/plant-welcome.png";
 
 function Title() {

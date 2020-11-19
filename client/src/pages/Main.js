@@ -1,3 +1,4 @@
+
 import React from "react";
 import Title from "../components/Title";
 import { useEffect, useState } from "react";
@@ -15,29 +16,29 @@ function Main() {
   const [trees, settrees] = useState([])
   const handleInputChange = event => {
     setsearch(event.target.value)
-}
+  }
   const handleFormSubmit = event => {
     event.preventDefault();
     API.trefle(search)
-        .then(res => {
-            console.log(res.data)
-            let results = res.data
-            results = results.map(result => {
-                result = {
-                    key: result.id,
-                    name: result.common_name,
-                    family: result.family_common_name,
-                    image_url: result.image_url,
-                    genus: result.genus
-                }
-            return result; 
-            })
-            settrees(results)
+      .then(res => {
+        console.log(res.data)
+        let results = res.data
+        results = results.map(result => {
+          result = {
+            key: result.id,
+            name: result.common_name,
+            family: result.family_common_name,
+            image_url: result.image_url,
+            genus: result.genus
+          }
+          return result;
         })
-        .catch(err => {
-            throw err
-        })
-}
+        settrees(results)
+      })
+      .catch(err => {
+        throw err
+      })
+  }
 
   return (
     <div className="MainPage mb-5">
@@ -79,7 +80,7 @@ function Main() {
 
               </div>
             </div>
-            
+
 
           </div>
 
@@ -101,16 +102,16 @@ function Main() {
           </section>
           {/* Image section starts here */}
           <section className="row imageRow" >
-            
-            <Results trees={trees}  />
+
+            <Results trees={trees} />
           </section>
 
-      
+
         </section>
-        
+
       </div>
       <footer className="bg-dark fixed-bottom col-lg-12 text-center">
-      <h1>Footer Goes here</h1>
+        <h1>Footer Goes here</h1>
 
       </footer>
 
