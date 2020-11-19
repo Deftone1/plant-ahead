@@ -2,14 +2,14 @@ header {
     padding-top: 10px;
 }
 
-.card-title {
+.garden-title {
     font-family: Lobster;
     text-align: center;
     font-size: 50px;
 
 }
 
-.card-body {
+.garden-body {
     border: solid black 1px;
     padding: 10px;
     margin: 5px;
@@ -18,7 +18,7 @@ header {
     
 }
 
-.card-text {
+.garden-text {
     text-align: center;
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,7 +26,7 @@ header {
 
 }
 
-.card {
+.garden-card {
     margin: 30px;
 }
 
