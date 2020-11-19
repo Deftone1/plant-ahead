@@ -15,13 +15,22 @@ function MyProjects() {
   const [data, setData] = useState(null);
   const { logout, user } = useAuth();
   const [plants, setplants] = useState([]);
-
+  
   let user_id =user.id
-   useEffect(() => {
-    API.getPlantbyid(user_id).then((response) => {
+  const loadPlants = (user_id) => {
+    API.getPlantbyuserid(user_id).then((response) => {
       setplants(response.data);
-     });
+  });
+};
+   useEffect(() => {
+    loadPlants(user_id)
    }, []);
+
+  const removeplant = (id)=>{
+    API.removeplantbyid(id).then(res=>loadPlants(user_id))
+    .catch(err=>console.log(err))
+
+  }
 
   return (
     <div className="MyProjects">
@@ -35,7 +44,7 @@ function MyProjects() {
 
       <div className="row">
   <GardenCard />
-  <SavedPlants plants={plants}/>
+  <SavedPlants plants={plants} removeplant={removeplant}/>
 </div>
 <div><img
         className="plantImageTwo"
