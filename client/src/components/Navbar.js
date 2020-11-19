@@ -13,7 +13,15 @@ function Navbar() {
         to="/"
         activeClassName="nav-link-active"
       >
-        Discover
+        Home
+      </NavLink>
+      <NavLink
+        className="nav-link"
+        exact
+        to="/community"
+        activeClassName="nav-link-active"
+      >
+        Community
       </NavLink>
       {isLoggedIn || (
         <NavLink

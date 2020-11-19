@@ -6,10 +6,11 @@ import SignupPage from "./pages/SignupPage";
 import Navbar from "./components/Navbar";
 import Main from "./pages/Main"
 import MyProjects from "./pages/MyProjects";
-import ProtectedExamplePage from "./pages/ProtectedExamplePage";
+// import ProtectedExamplePage from "./pages/ProtectedExamplePage";
 import { ProvideAuth } from "./util/authContext";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import Title from "./components/Title";
+// import Title from "./components/Title";
+import Community from "./pages/Community";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route>
+          <Route path="/community">
+            <Community />
           </Route>
           <Route path="/login">
             <LoginPage />
