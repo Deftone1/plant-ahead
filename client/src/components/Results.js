@@ -30,6 +30,7 @@ function Results(props) {
             </div>
 
         ));
+        
 
     return (
         <div className="col-md-8 mx-auto   border shadow" >
