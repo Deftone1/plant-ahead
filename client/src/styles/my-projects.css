@@ -6,27 +6,26 @@ header {
     font-family: Lobster;
     text-align: center;
     font-size: 50px;
-
 }
 
 .garden-body {
     border: solid black 1px;
     padding: 10px;
     margin: 5px;
-    
-    
-    
 }
 
 .garden-text {
     text-align: center;
     margin: 0 auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24px;
-
+    font-size: 18px;
+    padding: 5px;
 }
 
 .garden-card {
     margin: 30px;
 }
 
+.btn {
+    margin: 2px;
+}
