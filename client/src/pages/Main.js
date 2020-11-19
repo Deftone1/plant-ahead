@@ -3,11 +3,14 @@ import React from "react";
 import Title from "../components/Title";
 import { useEffect, useState } from "react";
 import { useAuth } from "../util/authContext";
-import "../styles/Main.css"
-import Plant from "../images/Plant.png"
-import Results from "../components/Results"
-import SearchForm from "../components/SearchForm"
+import "../styles/Main.css";
+import Results from "../components/Results";
+import SearchForm from "../components/SearchForm";
+import UserProfile from "../components/UserProfile";
+import GetStartedList from "../components/GetStartedList";
+import Footer from "../components/Footer";
 import API from "../util/API";
+
 
 function Main() {
   const { logout, user } = useAuth();
@@ -44,50 +47,22 @@ function Main() {
     <div className="MainPage mb-5">
       <Title />
 
-      {/* Page container holds everything */}
+
+
+      
       <div className="row  container-fluid MainPageContainer mx-auto">
 
+        {/* Left-Hand Side  */}
         <section className="col-md-2 col-xs-2 leftContentColumn">
-          {/* div holding user profile and garden list starts here */}
-          <div className="row d-flex justify-content-center pt-2">
-            <div className="card shadow " style={{ width: '15rem' }}>
-              {/* Profile */}
-              <div className="card-body ">
-                <img className="card-image rounded img-thumbnail mx-auto d-block" style={{ maxWidth: "50%", maxHeight: "50%" }} src={Plant} />
-                <h5 className="card-title text-center">User Name</h5>
-                <h6 className="card-subtitle mb-2 text-muted">Bio:</h6>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a imperdiet lacus, nec scelerisque lorem.</p>
-                <button className="btn btn-primary">Sign-Out</button>
 
-              </div>
-            </div>
-
-          </div>
-          <div className="row getStartedLists d-flex justify-content-center pt-5 pb-5">
-            <div className="card shadow " style={{ width: '15rem' }}>
-
-              <div className="card-body ">
-
-                <h5 className="card-title text-center">Get Started</h5>
-                <h6 className="card-subtitle mb-2 text-muted">Gardens</h6>
-                <ul className="list-group clearfix"  >
-                  <li className="list-group-item disabled" aria-disabled="true">Fly-Trap Garden</li>
-                  <li className="list-group-item">Vegetable-Garden</li>
-                  <li className="list-group-item">Rose-Garden</li>
-                  <li className="list-group-item">Cactus-Garden</li>
-                  <li className="list-group-item">Succulent-Garden</li>
-                </ul>
-
-              </div>
-            </div>
-
-
-          </div>
+          <UserProfile />
+          <GetStartedList />
 
         </section>
-        {/* Right hand-side content  */}
+
+        {/* Main section starts here Right-Side*/}
         <section className="col ">
-          {/* Main section starts here */}
+
           <SearchForm
             handleFormSubmit={handleFormSubmit}
             handleInputChange={handleInputChange}
@@ -95,18 +70,19 @@ function Main() {
 
           {/* Image section starts here */}
           <section className="row imageRow" >
-
             <Results trees={trees} />
           </section>
-
 
         </section>
 
       </div>
-      <footer className="bg-dark fixed-bottom col-lg-12 text-center">
+
+      {/* <footer className="bg-dark fixed-bottom col-lg-12 text-center">
         <h1>Footer Goes here</h1>
 
-      </footer>
+      </footer> */}
+
+      <Footer/>
 
     </div>
   );
