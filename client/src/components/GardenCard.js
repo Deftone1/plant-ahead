@@ -32,15 +32,16 @@ function GardenCard(props) {
   const gardenlist= gardens
   .map((garden)=>(
     <div className="border d-flex justify-content-between">
-    <button className=" btn btn-success" onClick={showModal}>{garden.name}</button>
-    <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
+    <button className=" btn btn-outline-success" onClick={showModal}>{garden.name}</button>
+    <button className=" btn btn-outline-primary" onClick={hideModal}>Edit</button> 
   </div>
   ))
   return (
-    <div className="col-sm-6 d-flex d">
+    <div className="col-sm-6">
       <div className="card garden-card">
         <div className="card-body shadow garden-body">
           <h5 className="card-title garden-title">MY PROJECTS</h5>
+          
 
           {/* <!-- Button trigger modal --> */}
          
@@ -54,8 +55,9 @@ function GardenCard(props) {
           title={title}
           /> 
 
-        </div>
         <button className="btn btn-primary">Clear Projects</button>
+        </div>
+        
       </div>
     </div>
 

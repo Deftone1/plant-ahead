@@ -46,12 +46,14 @@ function SavedPlants(props) {
 
   return (
     <div className="col-sm-6">
-      <div className="card garden-card">
-        <div className="card-body shadow garden-body">
-          <h5 className="card-title garden-title">SAVED PLANTS</h5>
-          {plantList}
-          <a href="#" className="btn btn-primary">Clear Saved Plants</a>
-        </div>
+
+    <div className="card garden-card">
+      <div className="card-body shadow garden-body">
+        <h5 className="card-title garden-title">SAVED PLANTS</h5>
+        {plantList}
+        
+      <button className="btn btn-primary">Clear Saved Plants</button>
+
       </div>
     </div>
 

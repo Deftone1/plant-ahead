@@ -77,10 +77,12 @@ const loadGardens = (user_id) => {
   <SavedPlants plants={plants} gardens={gardens}removeplant={removeplant} addplanttogarden={addplanttogarden}/>
   <form className="col">
         <div className="form-group">
+          <div className="create-garden">
           <input onChange={handleformchange} value={gardentitle}>
 
           </input>
           <button onClick={creategarden}>Create Garden</button>
+          </div>
         </div>
       </form>
 </div>
