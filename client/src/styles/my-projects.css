@@ -5,7 +5,7 @@ header {
 .garden-title {
     font-family: Lobster;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .garden-body {
@@ -28,4 +28,10 @@ header {
 
 .btn {
     margin: 2px;
+    padding-top:
+}
+
+.create-garden {
+    text-align: center;
+    
 }

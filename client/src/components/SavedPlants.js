@@ -17,7 +17,8 @@ function SavedPlants(props) {
       <div className="card-body shadow garden-body">
         <h5 className="card-title garden-title">SAVED PLANTS</h5>
         {plantList}
-        <a href="#" className="btn btn-primary">Clear Saved Plants</a>
+        
+      <button className="btn btn-primary">Clear Saved Plants</button>
       </div>
     </div>
   </div>
