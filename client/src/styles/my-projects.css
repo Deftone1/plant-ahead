@@ -1,4 +1,32 @@
-.my-projects {
-    max-width: 75%;
-    margin: 0 auto;
+header {
+    padding-top: 10px;
 }
+
+.card-title {
+    font-family: Lobster;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.card-body {
+    border: solid black 1px;
+    padding: 10px;
+    margin: 5px;
+    
+    
+    
+}
+
+.card-text {
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+
+}
+
+.card {
+    margin: 30px;
+}
+

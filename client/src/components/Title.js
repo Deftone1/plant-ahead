@@ -1,5 +1,5 @@
 import React from "react";
-// import "../styles/Title.css";
+
 
 import plantMain from "../images/plant-welcome.png";
 
@@ -11,14 +11,7 @@ function Title() {
         src={plantMain}
         alt="plant-ahead-welcome"
       /></div>
-    // <div >
-    //   <header className="d-flex justify-content-center align-items-center">
-    //   <h1>Plan</h1>
-    //   <img src={Tree} alt="Tree"/>
-    //   <h1>Ahead</h1>
-
-    //   </header>
-    // </div>
+    
   )
 
 };
