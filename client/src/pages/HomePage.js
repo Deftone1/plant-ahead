@@ -17,7 +17,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <header>
-        <h1>
+        <h1 className="welcome-font">
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
       </header>
