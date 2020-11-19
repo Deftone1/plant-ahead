@@ -27,7 +27,6 @@ function Main() {
   const handleFormSubmit = event => {
     event.preventDefault();
     API.trefle(search)
-<<<<<<< HEAD
         .then(res => {
             let results = res.data
             results = results.map(result => {
@@ -54,26 +53,6 @@ function Main() {
     console.log(savedplant)
     API.savePlant(savedplant)
     .catch(err => console.log(err))
-=======
-      .then(res => {
-        console.log(res.data)
-        let results = res.data
-        results = results.map(result => {
-          result = {
-            key: result.id,
-            name: result.common_name,
-            family: result.family_common_name,
-            image_url: result.image_url,
-            genus: result.genus
-          }
-          return result;
-        })
-        settrees(results)
-      })
-      .catch(err => {
-        throw err
-      })
->>>>>>> 28cb6abe55a097f2b9a4f8ae2423971ca86ece5a
   }
 
   return (
@@ -100,12 +79,8 @@ function Main() {
 
           {/* Image section starts here */}
           <section className="row imageRow" >
-<<<<<<< HEAD
             
             <Results trees={trees} handleSavedButton={saveplantbutton} />
-=======
-            <Results trees={trees} />
->>>>>>> 28cb6abe55a097f2b9a4f8ae2423971ca86ece5a
           </section>
 
         </section>
