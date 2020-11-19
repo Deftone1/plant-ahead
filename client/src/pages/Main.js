@@ -88,18 +88,11 @@ function Main() {
         {/* Right hand-side content  */}
         <section className="col ">
           {/* Main section starts here */}
-          <section className="row mainSection d-flex  justify-content-center align-items-center">
-            <div className="col-md-4 col-xs-2 border pr-5 pl-5 pt-2 shadow"  >
-              <h4 className="text-center">Search For Your Plant Below<br />
-              Filer By:</h4><br />
-              {/* Checklist goes here */}
-              <SearchForm
-                handleFormSubmit={handleFormSubmit}
-                handleInputChange={handleInputChange}
-              />
+          <SearchForm
+            handleFormSubmit={handleFormSubmit}
+            handleInputChange={handleInputChange}
+          />
 
-            </div>
-          </section>
           {/* Image section starts here */}
           <section className="row imageRow" >
 
