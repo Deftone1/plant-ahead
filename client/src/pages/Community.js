@@ -17,7 +17,7 @@ function Community() {
     return (
         <div className="">
             <Title />
-            <div className="row container mx-auto card shadow mt-3 text-center ">
+            <div className="row container mx-auto card shadow mt-3 text-center rounded">
 
                 <div className="card-body col d-flex justify-content-between align-items-center">
                     <span><img src={Tree} alt="Tree" /></span>
@@ -31,7 +31,7 @@ function Community() {
 
             </div>
             <section className="row mainSection d-flex  justify-content-center align-items-center">
-                <div className="col-md-4 col-xs-2 border pr-5 pl-5 pt-2 shadow"  >
+                <div className="col-md-4 col-xs-2 border pr-5 pl-5 pt-2 shadow rounded"  >
                     <h4 className="text-center">Search For Your Plant Below<br />
               Filer By:</h4><br />
                     {/* Checklist goes here */}
@@ -55,23 +55,23 @@ function Community() {
                                 <h6 className="card-subtitle mb-2 text-muted">Plant List</h6>
                                 <ul className="list-group ml-0 "  >
 
-                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center" >
+                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                         <h6>Fly-Trap Garden</h6>
                                        <button type="button" className="addPlanToList btn btn-primary d-flex justify-content-between " style={{ fontSize: "15px" }}>User: UserName Here</button>
                                     </li>
-                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center" >
+                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                         <h6>Fly-Trap Garden</h6>
                                        <button type="button" className="addPlanToList btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
                                     </li>
-                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center" >
+                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                         <h6>Vegetable-Garden</h6>
                                        <button type="button" className="addPlanToList btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
                                     </li>
-                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center" >
+                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                         <h6>Rose-Garden</h6>
                                        <button type="button" className="addPlanToList btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
                                     </li>
-                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center" >
+                                    <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                         <h6>Succubus-Garden</h6>
                                        <button type="button" className="addPlanToList btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
                                     </li>
