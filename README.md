@@ -1,63 +1,53 @@
-# MERN JWT Boilerplate
+<img width="1391" alt="Screen Shot 2020-11-19 at 11 05 24 AM" src="https://user-images.githubusercontent.com/66435213/99711924-3aaefd00-2a57-11eb-96cc-64e25666c32e.png">
 
-## About This Boilerplate
+# Plan(t) Ahead
 
-# test
+## Description:
+This application allows users to search for specific plants and add their selection to project garden ideas.  The user also has the ability to share their knowledge/experience in growing certain plants and sharing their thoughts with the community over the application. 
+This application has potential for interest amongst many different demographics, most specifically users interested in horticulture or retired users. We believe it is important to preserve nature and provide knowledge for this preservation, and our app allows our users to expand their knowledge of plants and how to properly care for them.
 
-This setup allows for a Node/Express/React/JWT app which can be easily deployed to Heroku.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Deployed App:
+https://plant-ahead.herokuapp.com/
 
-An article on how the server is setup with JWT can be found [here](https://hptechblogs.com/using-json-web-token-for-authentication/). This has been modified to use a mongo database instead of hardcoded array of users.
+## Github Repo:
+https://github.com/Deftone1/plant-ahead
 
-The front end has been setup to use JWT as a way of authenticating users and routes. To understand it's structure better please refer to the following article [here](https://hptechblogs.com/using-json-web-token-react/)
+## Installation:
+- clone repository
+- npm start
 
-Please feel free to modify this code in anyway you see fit for your project. It is a boilerplate setup that tries to make sure you can get something up and running without having to worry about setting up user authentication from scratch.
-I highly suggest you read the articles before jumping in so you can have an better understanding of how everything works in the code. 
+## Technologies Used:
+- HTML
+- CSS
+- React
+- Javascript
+- Bootstrap
+- MongoDB
+- Mongoose
+- Node-fetch
+- Trefle API
 
-Server-side article and using JWT: https://hptechblogs.com/using-json-web-token-for-authentication/
 
-Front End article on using the JWT on a react application: https://hptechblogs.com/using-json-web-token-react/
+## Screenshots of Application:
+![screenshot-plant-ahead](https://user-images.githubusercontent.com/66435213/99713159-d2f9b180-2a58-11eb-8e91-f14072c512e0.png)
 
-## Starting the app locally
+<img width="1419" alt="Screen Shot 2020-11-19 at 11 21 14 AM" src="https://user-images.githubusercontent.com/66435213/99713627-67641400-2a59-11eb-9b22-56d66febac5c.png">
 
-Add a .env at the top level of this project.
 
-Then inside of the .env add a SERVER_SECRET set to any value you'd like
 
-```
-SERVER_SECRET = 123456
-```
 
-Start by installing front and backend dependencies. While in the root directory, run the following command:
 
-```
-npm install
-```
+## Challenges:
 
-After all installations complete, run the following command in your terminal:
 
-```
-npm start
-```
+## Future Development:
+- Incorporate functionality where user can upload a photo of specific garden/landscaping area and drag and drop photos of chosen plants and arrange them into the photo as a visual understanding of what their completed project will look like. 
 
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## Authors:
+- Ver Pasamic
+- Gerardo Solis
+- Paul Murray
 
-## Deployment (Heroku)
+##### November 2020
 
-### Create a Git Repo
-
-Once you're ready to deploy, start by making sure your project is a git repository. If so, proceed to the next section, otherwise run the following commands in your terminal:
-
-```
-git init
-git add .
-git commit -m "Initial commit"
-```
-
-### Deploying
-
-1. Go onto your heroku account and link your repository through the UI
-2. Provision a Mongo Database (MongoDB Atlas provides a free sandbox cluster)
-3. Add `SERVER_SECRET` and `MONGODB_URI` to the Heroku config.
-4. Go back and click "Deploy"

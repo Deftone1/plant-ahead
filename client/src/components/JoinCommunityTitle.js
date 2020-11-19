@@ -8,7 +8,7 @@ function JoinCommunityTitle(props) {
             <div className="card-body col-md-12 col-sm-3 d-flex justify-content-between align-items-center">
                 <span><img src={Tree} alt="Tree" /></span>
                 <div >
-                    <h3>Join our Community,</h3>
+                    <h3>Join our Community</h3>
                     <p>Find Tips and Ideas to Make Your Project Come to Life.</p>
                 </div>
 

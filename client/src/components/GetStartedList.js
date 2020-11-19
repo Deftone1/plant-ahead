@@ -6,7 +6,7 @@ function GetStartedList(props) {
 
 
         <div className="row getStartedLists d-flex justify-content-center pt-5 pb-5">
-            <div className="card shadow " style={{ width: '15rem' }}>
+            <div className="card shadow " style={{ width: '30rem' }}>
 
                 <div className="card-body ">
 
