@@ -15,7 +15,6 @@ function Main() {
   const [trees, settrees] = useState([])
   const [userdata,setuserdata]=useState(null)
 
-
   const handleInputChange = event => {
     setsearch(event.target.value)
 }
@@ -23,7 +22,6 @@ function Main() {
     event.preventDefault();
     API.trefle(search)
         .then(res => {
-            console.log(res.data)
             let results = res.data
             results = results.map(result => {
                 result = {
@@ -44,7 +42,11 @@ function Main() {
 }
   const saveplantbutton = event => {
     event.preventDefault();
-
+    let savedplant = trees.filter(tree => JSON.stringify(tree.key) === event.target.id)
+    savedplant= savedplant[0]
+    console.log(savedplant)
+    API.savePlant(savedplant)
+    .catch(err => console.log(err))
   }
 
   return (
@@ -110,7 +112,7 @@ function Main() {
           {/* Image section starts here */}
           <section className="row imageRow" >
             
-            <Results trees={trees}  />
+            <Results trees={trees} handleSavedButton={saveplantbutton} />
           </section>
 
       

@@ -9,6 +9,7 @@ const fetch = require("node-fetch")
 const axios = require("axios")
 const { json } = require("express");
 const routes = require("./routes")
+//const plantsController = require("./controllers/plantsController");
 
 if (!process.env.SERVER_SECRET) {
   // SERVER_SECRET env var is required for auth
@@ -45,6 +46,7 @@ app.get("/api/protected", hasValidToken, (req, res) => {
     res.json(result.data)
   })
 }); */
+
 
 app.get("/api/protected/trefle/:tree",  (req, res) => {
   let tree = req.params.tree

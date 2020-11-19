@@ -11,7 +11,7 @@ function Results(props) {
 
             <div className="col mb-4 " key={tree.key} >
                 <div className="card">
-                    <img src={tree.image_url} className="card-img-top mx-auto border rounded img-thumbnail img-fluid" style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} alt="Test" />
+                    <img src={tree.image_url} className="card-img-top mx-auto border rounded img-thumbnail img-fluid" style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} alt={tree.name} />
                     <div className="card-body">
                         <div className="row">
                         <div className="col">
@@ -20,7 +20,7 @@ function Results(props) {
                             <p className="card-text">{tree.genus}</p>
                         </div>
                         <div className="col">
-                          <button className="addPlanToList btn btn-primary" style={{fontSize:"15px"}}>Add to List</button>
+                          <button className="addPlanToList btn btn-primary" style={{fontSize:"15px"}} id={tree.id} onClick={(event) => props.handleSavedButton(event)}>Add to List</button>
                         </div>
 
                         </div>
