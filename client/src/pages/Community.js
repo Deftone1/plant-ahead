@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Title from "../components/Title";
 import SearchForm from "../components/SearchForm"
-import Tree from "../images/Tree.svg";
-// Plant image below for testing only
-
 import FindUserInputResults from "../components/FindUserInputResults";
 import UserExperienceCard from "../components/UserExperienceCard";
 import JoinCommunityTitle from "../components/JoinCommunityTitle";

@@ -13,6 +13,7 @@ import API from "../util/API";
 
 
 function Main() {
+
   const { logout, user } = useAuth();
   const [search, setsearch] = useState("")
   const [results, setresults] = useState([])
@@ -20,6 +21,7 @@ function Main() {
   const handleInputChange = event => {
     setsearch(event.target.value)
   }
+  
   const handleFormSubmit = event => {
     event.preventDefault();
     API.trefle(search)
@@ -46,9 +48,6 @@ function Main() {
   return (
     <div className="MainPage mb-5">
       <Title />
-
-
-
       
       <div className="row  container-fluid MainPageContainer mx-auto">
 
@@ -76,11 +75,6 @@ function Main() {
         </section>
 
       </div>
-
-      {/* <footer className="bg-dark fixed-bottom col-lg-12 text-center">
-        <h1>Footer Goes here</h1>
-
-      </footer> */}
 
       <Footer/>
 

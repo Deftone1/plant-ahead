@@ -46,7 +46,7 @@ function UserExperienceCard(props) {
 
                         </div>
                         <div className="col">
-                            <img src={Plant} className="card-img fluid-img img-thumbnail" alr="Plant" style={{ width: "200px", objectFit: "contain" }} />
+                            <img src={Plant} className="card-img fluid-img img-thumbnail" alt="Plant" style={{ width: "200px", objectFit: "contain" }} />
 
                         </div>
 
