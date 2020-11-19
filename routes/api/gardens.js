@@ -16,4 +16,9 @@ router
 router
   .route("/user/:id")
   .get(gardensController.findByUserId)
+
+router
+    .route("/addplant/:id/:plants_id")
+    .put(gardensController.addplant)
+
 module.exports = router;

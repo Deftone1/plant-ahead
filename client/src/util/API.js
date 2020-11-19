@@ -15,7 +15,9 @@ const createGarden=(gardendata) => axios.post("/api/gardens", gardendata)
 
 const trefle = (plant) => axios.get("/api/protected/trefle/" +plant)
 
+const savePlanttoGarden = (gardenid, plantid) => axios.put("/api/gardens/addplant/"+gardenid+"?="+plantid)
+
 const getgardenbyuserid = (id) => axios.get("/api/gardens/user/"+id)
-const API = { getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid };
+const API = { getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid, savePlanttoGarden};
 
 export default API;
