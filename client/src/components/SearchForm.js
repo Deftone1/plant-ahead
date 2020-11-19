@@ -6,8 +6,8 @@ function SearchForm(props) {
 
     <section className="row mainSection d-flex  justify-content-center align-items-center">
       <div className="col-md-4 col-xs-2 border pr-5 pl-5 pt-2 shadow rounded"  >
-        <h4 className="text-center">Search For Your Plant Below<br />
-              Filer By:</h4><br />
+        <h4 className="text-center">Search For Your Plant Below:<br />
+              </h4><br />
         <form >
           <div className="form-check form-check-inline">
             <input className="form-check-input" type="checkbox" id="commonName" value="option1" />
@@ -25,7 +25,7 @@ function SearchForm(props) {
             <input className="form-check-input" type="checkbox" id="species" value="option2" />
             <label className="form-check-label" htmlFor="inlineCheckbox2">Species</label>
           </div>
-          <div className="form-group d-flex   ">
+          <div className="form-group d-flex">
             <input type="text"
               className="form-control"
               placeholder="Search for a plant"

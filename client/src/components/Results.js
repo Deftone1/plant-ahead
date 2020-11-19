@@ -33,7 +33,7 @@ function Results(props) {
         
 
     return (
-        <div className="col-md-8 mx-auto   border shadow" >
+        <div className="col-md-11 mx-auto border shadow results-box" >
             <div className="row">
                 <div className="col">
                     <h3 className="searchTitle">Search Results:</h3>
