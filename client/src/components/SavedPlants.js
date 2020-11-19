@@ -56,6 +56,7 @@ function SavedPlants(props) {
 
       </div>
     </div>
+    </div>
 
 
   )
