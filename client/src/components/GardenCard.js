@@ -8,10 +8,11 @@ import GardenModal from "../components/GardenModal";
 import { useState } from "react";
 
 function GardenCard(props) {
+  const gardens =props.gardens;
+ 
 
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
-
 
 
   const showModal = () => {
@@ -28,6 +29,13 @@ function GardenCard(props) {
     setTitle("Modal Ready");
   };
 
+  const gardenlist= gardens
+  .map((garden)=>(
+    <div className="border d-flex justify-content-between">
+    <button className=" btn btn-success" onClick={showModal}>{garden.name}</button>
+    <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
+  </div>
+  ))
   return (
     <div className="col-sm-6 d-flex d">
       <div className="card garden-card">
@@ -36,39 +44,10 @@ function GardenCard(props) {
 
           {/* <!-- Button trigger modal --> */}
          
-          <div className="border d-flex justify-content-between">
-            <button className=" btn btn-success" onClick={showModal}>Rose Garden</button>
-            <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
-          </div>
-          <br/>
-
-          <div className="border d-flex justify-content-between">
-            <button className=" btn btn-success" onClick={showModal}>Rose Garden</button>
-            <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
-          </div>
-          <br/>
-
-          <div className="border d-flex justify-content-between">
-            <button className=" btn btn-success" onClick={showModal}>Rose Garden</button>
-            <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
-          </div>
-          <br/>
-
-          <div className="border d-flex justify-content-between">
-            <button className=" btn btn-success" onClick={showModal}>Rose Garden</button>
-            <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
-          </div>
-          <br/>
-
-          <div className="border d-flex justify-content-between">
-            <button className=" btn btn-success" onClick={showModal}>Rose Garden</button>
-            <button className=" btn btn-primary" onClick={hideModal}>Edit</button> 
-          </div>
-          <br/>
-       
+          {gardenlist}
           
           
-           <GardenModal value={props}
+           <GardenModal 
           hideModal={hideModal}
           isOpen={isOpen}
           modalLoaded={modalLoaded}
@@ -83,3 +62,5 @@ function GardenCard(props) {
   )
 };
 export default GardenCard;
+
+
