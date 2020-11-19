@@ -36,7 +36,8 @@ function Main() {
                     family: result.family_common_name,
                     image_url: result.image_url,
                     genus: result.genus,
-                    user_id:user.id
+                    user_id:user.id,
+                    id: result.id
                 }
             return result; 
             })
@@ -48,7 +49,7 @@ function Main() {
 }
   const saveplantbutton = event => {
     event.preventDefault();
-    let savedplant = trees.filter(tree => JSON.stringify(tree.key) === event.target.id)
+    let savedplant = trees.filter(tree => JSON.stringify(tree.id)=== event.target.id)
     savedplant= savedplant[0]
     console.log(savedplant)
     API.savePlant(savedplant)
