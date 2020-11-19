@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../util/authContext";
 import "../styles/my-projects.css";
 import API from "../util/API";
+import GardenCard from "../components/GardenCard";
+import SavedPlants from "../components/SavedPlants";
 import Tree from "../images/Tree.svg";
-import plantMain from "../images/plant-welcome.png";
+import leaves from "../images/leaves.png";
+
 
 function MyProjects() {
   const [data, setData] = useState(null);
@@ -23,8 +26,17 @@ function MyProjects() {
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
       </header>
+      <br></br>
 
-      {/* garden cards here */}
+      <div className="row">
+  <GardenCard />
+  <SavedPlants />
+</div>
+<div><img
+        className="plantImageTwo"
+        src={leaves}
+        alt="plant-ahead-welcome"
+      ></img></div>
     </div>
   );
 }
