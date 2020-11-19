@@ -25,6 +25,7 @@ function MyProjects() {
 
 const loadGardens = (user_id) => {
   API.getgardenbyuserid(user_id).then((response) => {
+    console.log(response.data)
     setgardens(response.data);
 });
 };
@@ -46,7 +47,6 @@ const loadGardens = (user_id) => {
   }
   const creategarden = event =>{
     event.preventDefault();
-    console.log(gardentitle)
     API.createGarden({
       name:gardentitle,
       user_id:user.id}).then(res =>{
@@ -54,6 +54,13 @@ const loadGardens = (user_id) => {
         loadGardens(user.id)}
         )
   }
+
+
+  const addplanttogarden = (garden, plant) =>{
+    API.savePlanttoGarden(garden,plant)
+  }
+
+
 
   return (
     <div className="MyProjects">
@@ -67,7 +74,7 @@ const loadGardens = (user_id) => {
 
       <div className="row">
   <GardenCard gardens={gardens}/>
-  <SavedPlants plants={plants} removeplant={removeplant}/>
+  <SavedPlants plants={plants} gardens={gardens}removeplant={removeplant} addplanttogarden={addplanttogarden}/>
   <form className="col">
         <div className="form-group">
           <input onChange={handleformchange} value={gardentitle}>
