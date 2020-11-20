@@ -11,7 +11,7 @@ function SavedPlants(props) {
       </p>
       <div className="d-flex justify-content-center">
         <Dropdown>
-          <Dropdown.Toggle className="btn btn-primary btn-sm" id={plant._id}>
+          <Dropdown.Toggle className="btn1 btn-success btn-sm" id={plant._id}>
             Add to Project
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -26,14 +26,13 @@ function SavedPlants(props) {
           </Dropdown.Menu>
         </Dropdown>
 
-        <a
-          href="#"
-          className="btn btn-outline-danger btn-sm"
+        <button
+          
+          className="btn2 btn-sm"
           id={plant._id}
           onClick={() => props.removeplant(plant._id)}
-        >
-          Remove Plant
-        </a>
+        >Remove Plant</button>
+       
       </div>
     </div>
   ));
@@ -44,10 +43,10 @@ function SavedPlants(props) {
     <div className="col-sm-6">
       <div className="card garden-card">
         <div className="card-body shadow garden-body">
-          <h5 className="card-title garden-title">SAVED PLANTS</h5>
+          <h5 className="card-title garden-title">Saved Plants</h5>
           {plantList}
 
-          <button className="btn btn-primary">Clear Saved Plants</button>
+          <br></br><button className="btn1 btn-outline-primary btn-sm">Clear Saved Plants</button>
         </div>
       </div>
     </div>
