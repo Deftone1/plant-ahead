@@ -6,20 +6,33 @@ import plantMain from "../images/plant-welcome.png";
 import Plant from "../images/Plant.png";
 import Community from "../images/Community.png";
 import { Link } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
+
 
 function HomePage() {
+
   const [data, setData] = useState(null);
   // useEffect(() => {
   //   API.getPublicExample().then((response) => {
   //     setData(response.data);
   //   });
   // }, []);
+
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
+
+
   return (
-    <div className="HomePage">
+    <animated.div className="HomePage" style={fade}>
       <header>
         <h1 className="welcome-font">
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
+
       </header>
       <div><img
         className="plantImageHeader"
@@ -31,12 +44,12 @@ function HomePage() {
       <section>
         <p><span className="welcome-font">
           Welcome to Plan(t) Ahead.</span><br></br>
-          
+
           Join us in creating a community of plant enthusiasts. Discover new
           plant species and families and add them to your next gardening
           project. View community input and advice in regards to growing certain
-          plant types. <br/><br></br>
-        <span className="slogan">Discover together, learn together</span>
+          plant types. <br /><br></br>
+          <span className="slogan">Discover Together - Learn Together</span>
         </p>
       </section>
 
@@ -55,7 +68,8 @@ function HomePage() {
       {/* <h3>Public API Data</h3>
       <h1>HELLO, WORLD!</h1>
       <p>{data && data.message}</p> */}
-    </div>
+    </animated.div>
+
   );
 }
 export default HomePage;

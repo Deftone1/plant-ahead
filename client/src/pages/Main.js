@@ -10,9 +10,16 @@ import UserProfile from "../components/UserProfile";
 import GetStartedList from "../components/GetStartedList";
 import Footer from "../components/Footer";
 import API from "../util/API";
+import {useSpring, animated} from "react-spring";
 
 
 function Main() {
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
 
   const { logout, user } = useAuth();
   const [search, setsearch] = useState("")
@@ -57,7 +64,7 @@ function Main() {
   }
 
   return (
-    <div className="MainPage mb-5">
+    <animated.div className="MainPage mb-5" style={fade}>
       <Title />
       
       <div className="row  container-fluid MainPageContainer mx-auto">
@@ -90,7 +97,7 @@ function Main() {
 
       <Footer/>
 
-    </div>
+    </animated.div>
   );
 }
 

@@ -6,6 +6,8 @@ function Results(props) {
 
     //  deconstructing props here and defining trees
     const { trees } = props;
+    
+
     const plantList = trees
         .map((tree) => (
 
@@ -31,7 +33,6 @@ function Results(props) {
 
         ));
         
-
     return (
         <div className="col-md-11 mx-auto border shadow results-box" >
             <div className="row">

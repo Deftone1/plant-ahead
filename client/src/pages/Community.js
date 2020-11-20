@@ -4,8 +4,16 @@ import SearchForm from "../components/SearchForm"
 import FindUserInputResults from "../components/FindUserInputResults";
 import UserExperienceCard from "../components/UserExperienceCard";
 import JoinCommunityTitle from "../components/JoinCommunityTitle";
+import {useSpring, animated} from "react-spring";
 
 function Community() {
+
+    const fade = useSpring({
+        from: {
+          opacity: 0
+        },
+        opacity: 1
+      });
 
     const [searchPlant, setSearchPlant] = useState("");
     useEffect(() => {
@@ -20,15 +28,15 @@ function Community() {
     const handleInputChange = (event) => { setSearchPlant(event.target.value) }
 
     return (
-        <div className="">
+        <animated.div className="" style={fade}>
             <Title />
             <JoinCommunityTitle />
 
-            <SearchForm
+            {/* <SearchForm
                 handleInputChange={handleInputChange}
                 value={searchPlant}
 
-            />
+            /> */}
 
             <section className="row  mx-auto justify-content-md-center px-5">
 
@@ -39,7 +47,7 @@ function Community() {
             </section>
 
 
-        </div>
+        </animated.div>
     );
 }
 

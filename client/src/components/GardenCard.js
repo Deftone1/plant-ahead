@@ -52,57 +52,49 @@ function GardenCard(props) {
     setTitle(name);
   };
 
-  const removeplantfromgarden = (garden, plant) =>{
-    API.deletePlantfromGarden(garden,plant)
-    hideModal()
-  }
+const removeplantfromgarden = (garden, plant) =>{
+  API.deletePlantfromGarden(garden,plant)
+  hideModal()
+}
 
 
-  const gardenlist = gardens.map((garden) => (
+  const gardenlist= gardens
+  .map((garden)=>(
     <div className="border d-flex justify-content-between">
-      <button
-        className=" btn btn-outline-success"
-        id={garden._id}
-        onClick={gardenmodalclick}
-      >
-        {garden.name}
-      </button>
-      <button className=" btn btn-outline-primary" onClick={hideModal}>
-        Edit
-      </button>
-      <button
-        className="btn btn-outline-danger"
-        data-id={garden._id}
-        onClick={() => removegarden(garden._id)}
-      >
-        Delete
-      </button>
-    </div>
-  ));
+    <button className=" btn3 btn-primary btn-sm" id={garden._id} onClick={gardenmodalclick}>{garden.name}</button>
+    <button className=" btn3 btn-outline-dark btn-sm" onClick={()=>removegarden(garden._id)}>Delete</button> 
+  </div>
+  ))
 
+
+ 
 
 
   return (
     <div className="col-sm-6">
       <div className="card garden-card">
         <div className="card-body shadow garden-body">
-          <h5 className="card-title garden-title">MY PROJECTS</h5>
+          <h5 className="card-title garden-title">My Projects</h5>
+          
 
           {/* <!-- Button trigger modal --> */}
 
           {gardenlist}
+          
+          
+           <GardenModal 
+        hideModal={hideModal}
+        isOpen={isOpen}
+        modalLoaded={modalLoaded}
+        title={title}
+        currentgarden={currentgarden}
+        currentid={currentid}
+        removeplantfromgarden = {removeplantfromgarden}
+         
 
-          <GardenModal
-            hideModal={hideModal}
-            isOpen={isOpen}
-            modalLoaded={modalLoaded}
-            title={title}
-            currentgarden={currentgarden}
-            currentid={currentid}
-            removeplantfromgarden = {removeplantfromgarden}
-          />
+          /> 
 
-          <button className="btn btn-primary">Clear Projects</button>
+        <br></br><button className="btn1 btn-outline-primary btn-sm">Clear Projects</button>
         </div>
       </div>
     </div>
