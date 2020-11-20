@@ -21,4 +21,7 @@ router
     .route("/addplant/:id/:plants_id")
     .put(gardensController.addplant)
 
+router
+    .route("/removeplant/:id/:plants_id")
+    .put(gardensController.removeplant)
 module.exports = router;
