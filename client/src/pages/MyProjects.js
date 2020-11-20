@@ -78,7 +78,7 @@ function MyProjects() {
     <animated.div className="MyProjects" style={fade}>
       <Title />
       <header>
-        <h1>
+        <h1 className="welcome-font">
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
       </header>
