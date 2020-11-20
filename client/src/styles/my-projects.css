@@ -2,6 +2,10 @@ header {
     padding-top: 10px;
 }
 
+.MyProjects {
+    background-color: rgba(124, 167, 123, 0.1);
+}
+
 .garden-title {
     font-family: Lobster;
     text-align: center;
@@ -23,16 +27,18 @@ header {
 }
 
 .garden-card {
-    margin: 30px;
+    margin: 20px;
 }
 
 .btn {
     margin: 2px;
-    padding-top:
 }
 
 .create-garden {
     text-align: center;
-    
 }
 
+.btn3 {
+    font-family: Tahoma;
+    font-size: 18px;
+}

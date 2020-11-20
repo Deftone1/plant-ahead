@@ -78,19 +78,19 @@ function MyProjects() {
       </header>
       <br></br>
 
-      <div className="row">
-        <GardenCard gardens={gardens} />
-        <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
-        <form className="col">
+        <form className="project-form col-sm-6">
           <div className="form-group">
             <div className="create-garden">
               <input onChange={handleformchange} value={gardentitle}>
 
               </input>
-              <button className="create" onClick={creategarden}>Create Garden</button>
+              <button className="btn1" onClick={creategarden}>Create Garden</button>
             </div>
           </div>
         </form>
+      <div className="row">
+        <GardenCard gardens={gardens} />
+        <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
       </div>
       <div><img
         className="plantImageTwo"

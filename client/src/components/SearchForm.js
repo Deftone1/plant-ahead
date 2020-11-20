@@ -25,6 +25,7 @@ function SearchForm(props) {
             <input className="form-check-input" type="checkbox" id="species" value="option2" />
             <label className="form-check-label" htmlFor="inlineCheckbox2">Species</label>
           </div>
+          <br></br><br></br>
           <div className="form-group d-flex">
             <input type="text"
               className="form-control"
@@ -33,7 +34,7 @@ function SearchForm(props) {
               onChange={props.handleInputChange}
             />
             <button type="submit"
-              className="btn btn-primary ml-4"
+              className="btn1 btn-primary ml-4"
               onClick={props.handleFormSubmit}
             >Submit</button>
           </div>
