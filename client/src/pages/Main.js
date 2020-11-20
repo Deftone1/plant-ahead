@@ -10,8 +10,8 @@ import UserProfile from "../components/UserProfile";
 import GetStartedList from "../components/GetStartedList";
 import Footer from "../components/Footer";
 import API from "../util/API";
-import {useSpring, animated} from "react-spring";
-
+import { useSpring, animated } from "react-spring";
+import Toast from 'react-bootstrap/Toast';
 
 function Main() {
   const fade = useSpring({
@@ -22,51 +22,70 @@ function Main() {
   });
 
   const { logout, user } = useAuth();
+<<<<<<< HEAD
+  const [search, setsearch] = useState("");
+  const [results, setresults] = useState([]);
+  const [trees, settrees] = useState([]);
+  const [userdata, setuserdata] = useState(null);
+  const [show, setShow] = useState(false);
+
+
+
+=======
   const [search, setsearch] = useState("")
   const [results, setresults] = useState([])
   const [trees, settrees] = useState([])
   const [userdata,setuserdata]=useState(null)
   
+>>>>>>> edb1cb0d6416ef6285b86647ccde942cb4fabce7
   const handleInputChange = event => {
     setsearch(event.target.value)
   }
-  
+
   const handleFormSubmit = event => {
     event.preventDefault();
     API.trefle(search)
-        .then(res => {
-            let results = res.data
-            results = results.map(result => {
-                result = {
-                    key: result.id,
-                    name: result.common_name,
-                    family: result.family_common_name,
-                    image_url: result.image_url,
-                    genus: result.genus,
-                    user_id:user.id,
-                    id: result.id
-                }
-            return result; 
-            })
-            settrees(results)
+      .then(res => {
+        let results = res.data
+        results = results.map(result => {
+          result = {
+            key: result.id,
+            name: result.common_name,
+            family: result.family_common_name,
+            image_url: result.image_url,
+            genus: result.genus,
+            user_id: user.id,
+            id: result.id
+          }
+          return result;
         })
-        .catch(err => {
-            throw err
-        })
-}
+        settrees(results)
+      })
+      .catch(err => {
+        throw err
+      })
+  }
+  const closeToast = () => {
+    setShow(false);
+
+  };
+
+
   const saveplantbutton = event => {
     event.preventDefault();
-    let savedplant = trees.filter(tree => JSON.stringify(tree.id)=== event.target.id)
-    savedplant= savedplant[0]
+    let savedplant = trees.filter(tree => JSON.stringify(tree.id) === event.target.id)
+    savedplant = savedplant[0]
     console.log(savedplant)
     API.savePlant(savedplant)
     .catch(err => console.log(err))
+    setShow(true)
+   
   }
 
   return (
     <animated.div className="MainPage mb-5" style={fade}>
       <Title />
-      
+
       <div className="row  container-fluid MainPageContainer mx-auto">
 
         {/* Left-Hand Side  */}
@@ -87,15 +106,53 @@ function Main() {
 
           {/* Image section starts here */}
           <section className="row imageRow" >
-            
+
             <Results trees={trees} handleSavedButton={saveplantbutton} />
+
+
+            
+             <div
+              aria-live="polite"
+              aria-atomic="true"
+              className="row"
+              style={{
+                position: 'relative',
+                minHeight: '200px',
+                
+                
+
+
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: -130,
+                  right: 200,
+                  
+                  
+
+                }}
+              >
+                <Toast show={show} onClose={() => setShow(false)} delay={3000} autohide style={{minWidth:"300px"}}>
+                  <Toast.Header style={{backgroundColor:"lightGreen"}}>
+
+                    <strong className="mr-auto">You have added a Plant!</strong>
+                    <small>just now</small>
+                  </Toast.Header>
+                  <Toast.Body>See saved Plants in Your Projects Page!.</Toast.Body>
+                </Toast>
+              </div>
+            </div> 
+
+
           </section>
 
         </section>
 
       </div>
 
-      <Footer/>
+      <Footer />
 
     </animated.div>
   );
