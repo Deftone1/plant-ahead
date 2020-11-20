@@ -1,19 +1,6 @@
-.MainPage {
-    /* background-color: red; */
-    /* height: 100vh; */
-}
 
-.MainPageContainer {
-    /* background-color: green; */
-    /* height: 80vh; */
-    
-    
-}
 
-.leftContentColumn {
-    /* background-color: grey; */
 
-}
 
 .mainSection {
     
@@ -38,3 +25,21 @@
     overflow-y: scroll; */
 }
 
+.btn1 {
+    font-family: Tahoma;
+    font-size: 16px;
+    margin-left: 4px;
+    
+}
+
+.btn2 {
+    font-family: Tahoma;
+    font-size: 14px;
+    margin-left: 6px;
+    
+}
+
+.user-profile {
+    text-align: center;
+    padding: 3px;
+}

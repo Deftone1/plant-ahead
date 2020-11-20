@@ -1,11 +1,24 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import ModalBody from "react-bootstrap/ModalBody";
+import ModalHeader from "react-bootstrap/ModalHeader";
+import ModalFooter from "react-bootstrap/ModalFooter";
+import ModalTitle from "react-bootstrap/ModalTitle";
+import API from "../util/API"
+
 
 function GardenModal(props) {
-    const {hideModal, isOpen, modalLoaded, title} = props;
-      
+    const {hideModal, isOpen, modalLoaded, title, currentgarden, currentid, removeplantfromgarden} = props;
+    console.log(currentgarden)
+    const plantsingarden = currentgarden.map(plantingarden =>(
+        <div className="d-flex justify-content-between border">
+        <li className="list-group-item">{plantingarden.name} </li>
+        <button className=" btn btn-danger" data-gardenid= {currentid} onClick={() => removeplantfromgarden(currentid, plantingarden._id)}>✗</button>
+   </div>
+    ))
+   
     return (
-        <Modal show={isOpen} onHide={hideModal} onEntered={modalLoaded}>
+        <Modal show={isOpen} onHide={hideModal}>
             <Modal.Header>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
@@ -14,22 +27,7 @@ function GardenModal(props) {
             <Modal.Body>
                 <h5>Here are your current plants in your garden:</h5>
                 <ul className="list-group">
-                    <div className="d-flex justify-content-between border">
-                        <li className="list-group-item">Cras justo odio </li>
-                        <button className=" btn btn-danger" onClick={hideModal}>✗</button>
-                    </div>
-                    <div className="d-flex justify-content-between border">
-                        <li className="list-group-item">Cras justo odio </li>
-                        <button className=" btn btn-danger" onClick={hideModal}>✗</button>
-                    </div>
-                    <div className="d-flex justify-content-between border">
-                        <li className="list-group-item">Cras justo odio </li>
-                        <button className=" btn btn-danger" onClick={hideModal}>✗</button>
-                    </div>
-                    <div className="d-flex justify-content-between border">
-                        <li className="list-group-item">Cras justo odio </li>
-                        <button className=" btn btn-danger" onClick={hideModal}>✗</button>
-                    </div>
+                {plantsingarden}  
                 </ul>
 
             </Modal.Body>

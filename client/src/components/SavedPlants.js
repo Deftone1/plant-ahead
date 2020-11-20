@@ -2,22 +2,24 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function SavedPlants(props) {
-  const { plants, gardens, addplanttogarden } = props;
+  const { plants, gardens, addplanttogarden, deleteallplants,user } = props;
+  
 
-  const plantList = plants.map((plant) => (
-    <div>
+  const plantList = plants.map((plant, index) => (
+    <div key={index}>
       <p className="card-text garden-text">
         {plant.name} <br></br>
       </p>
       <div className="d-flex justify-content-center">
         <Dropdown>
-          <Dropdown.Toggle className="btn btn-primary btn-sm" id={plant._id}>
+          <Dropdown.Toggle className="btn1 btn-success btn-sm" id={plant._id}>
             Add to Project
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            {gardens.map((garden) => (
+            {gardens.map((garden,index) => (
               <Dropdown.Item
                 href="#/action-1"
+                key={index}
                 onClick={() => addplanttogarden(garden._id, plant._id)}
               >
                 {garden.name}
@@ -26,28 +28,27 @@ function SavedPlants(props) {
           </Dropdown.Menu>
         </Dropdown>
 
-        <a
-          href="#"
-          className="btn btn-outline-danger btn-sm"
+        <button
+          
+          className="btn2 btn-sm"
           id={plant._id}
           onClick={() => props.removeplant(plant._id)}
-        >
-          Remove Plant
-        </a>
+        >Remove Plant</button>
+       
       </div>
     </div>
   ));
 
-  console.log(plants);
+  
 
   return (
     <div className="col-sm-6">
       <div className="card garden-card">
         <div className="card-body shadow garden-body">
-          <h5 className="card-title garden-title">SAVED PLANTS</h5>
+          <h5 className="card-title garden-title">Saved Plants</h5>
           {plantList}
 
-          <button className="btn btn-primary">Clear Saved Plants</button>
+          <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=>deleteallplants(user.id)}>Clear Saved Plants</button>
         </div>
       </div>
     </div>

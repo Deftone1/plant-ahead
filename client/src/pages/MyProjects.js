@@ -48,14 +48,23 @@ function MyProjects() {
       .catch(err => console.log(err))
 
   }
-
+  const deleteallgardens = (user_id) =>{
+    API.cleargardens(user_id).then((response) => {
+      loadGardens(user.id)
+    });
+  };
+  const deleteallplants = (user_id) =>{
+    API.clearplantsbyuserid(user_id).then((response) => {
+      loadPlants(user.id)
+    });
+  };
+  
   const handleformchange = event => {
     event.preventDefault();
     setgardentitle(event.target.value)
   }
   const creategarden = event => {
     event.preventDefault();
-    console.log(gardentitle)
     API.createGarden({
       name: gardentitle,
       user_id: user.id
@@ -68,29 +77,36 @@ function MyProjects() {
   const addplanttogarden = (garden, plant) => {
     API.savePlanttoGarden(garden, plant)
   }
+
+  const removegarden =(id) => {
+    API.deletegardenbyid(id).then(res=> loadGardens(user.id))
+    .catch(err=>console.log(err))
+  }
+
+
   return (
     <animated.div className="MyProjects" style={fade}>
       <Title />
       <header>
-        <h1>
+        <h1 className="welcome-font">
           Plan<img src={Tree} alt="Tree"></img> Ahead
         </h1>
       </header>
       <br></br>
 
-      <div className="row">
-        <GardenCard gardens={gardens} />
-        <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
-        <form className="col">
+        <form className="project-form col-sm-6">
           <div className="form-group">
             <div className="create-garden">
               <input onChange={handleformchange} value={gardentitle}>
 
               </input>
-              <button className="create" onClick={creategarden}>Create Garden</button>
+              <button className="btn1" onClick={creategarden}>Create Garden</button>
             </div>
           </div>
         </form>
+      <div className="row">
+        <GardenCard gardens={gardens} removegarden={removegarden} deleteallgardens={deleteallgardens} user={user}/>
+        <SavedPlants user={user} plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} deleteallplants={deleteallplants} />
       </div>
       <div><img
         className="plantImageTwo"

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../util/authContext";
 
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 function Navbar() {
   const { isLoggedIn, logout } = useAuth();
@@ -59,7 +59,7 @@ function Navbar() {
           MyProjects
         </NavLink>
       )}
-      {isLoggedIn && <button className="navbar-nav ml-auto m-2 p-1" onClick={logout}>Logout</button>}
+      {isLoggedIn && <button className="navbar-nav ml-auto m-2 p-1 btn1" onClick={logout}>Logout</button>}
     </nav>
   );
 }
