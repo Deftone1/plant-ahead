@@ -32,11 +32,11 @@ function Community() {
             <Title />
             <JoinCommunityTitle />
 
-            <SearchForm
+            {/* <SearchForm
                 handleInputChange={handleInputChange}
                 value={searchPlant}
 
-            />
+            /> */}
 
             <section className="row  mx-auto justify-content-md-center px-5">
 

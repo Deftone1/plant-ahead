@@ -11,11 +11,11 @@ header {
     justify-content: center;
     margin: auto;
     text-align: center;
-    width: 55%;
+    width: 75%;
     font-size: 24px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgb(255, 255, 255, .7);
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .PlantImages {
@@ -58,4 +58,5 @@ button {
 
 .welcome-font {
     font-family: Lobster;
+    font-size: 28px;
 }

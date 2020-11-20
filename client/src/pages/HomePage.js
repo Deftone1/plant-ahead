@@ -49,7 +49,7 @@ function HomePage() {
           plant species and families and add them to your next gardening
           project. View community input and advice in regards to growing certain
           plant types. <br /><br></br>
-          <span className="slogan">Discover together, learn together</span>
+          <span className="slogan">Discover Together - Learn Together</span>
         </p>
       </section>
 

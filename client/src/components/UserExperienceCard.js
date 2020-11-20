@@ -4,9 +4,9 @@ function UserExperienceCard(props) {
 
     return (
 
-        <div className="col-md-7 card">
-            <div className=" row d-flex  pb-4 ">
-                <div className=" col-md-11 card shadow mx-auto mt-2" >
+        <div className="col-md-8 card">
+            <div className=" row d-flex mt-2 ">
+                <div className=" col-md-11 card shadow mx-auto" >
 
                     <div className="card-body ">
 
@@ -21,7 +21,7 @@ function UserExperienceCard(props) {
             </div>
             {/* User Experience Goes here */}
             <div className=" d-flex justify-content-center   ">
-                <div className="card shadow " style={{ width: '50rem' }}>
+                <div className="card shadow col-md-11 mt-2" style={{ width: '50rem' }}>
                     <div className="pl-4 pt-4">
                         <h5 className="card-title text-center">User-Experience</h5>
                         <h6 className="card-subtitle mb-2 text-muted">Plant: {"[Plant Name Goes Here]"}</h6>
