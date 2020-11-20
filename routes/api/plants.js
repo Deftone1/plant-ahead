@@ -16,4 +16,5 @@ router
 router
   .route("/user/:id")
   .get(plantsController.findByUserId)
+  .delete(plantsController.deletebyuserid)
 module.exports = router;

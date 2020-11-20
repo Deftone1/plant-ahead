@@ -9,7 +9,7 @@ function UserProfile(props) {
             <div className="card shadow" style={{ width: '50rem' }}>
                 <div className="card-body">
                     <img className="card-image rounded img-thumbnail mx-auto d-block" alt="Profile" style={{ maxWidth: "50%", maxHeight: "50%" }} src={Plant} />
-                    <h5 className="card-title text-center">User Name</h5>
+                    <h5 className="card-title text-center">{props.user.username}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Bio:</h6>
                     <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a imperdiet lacus, nec scelerisque lorem.</p>
                     {/* <button className="btn btn-primary">Sign-Out</button> */}

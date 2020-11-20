@@ -26,7 +26,7 @@ function Main() {
   const [results, setresults] = useState([])
   const [trees, settrees] = useState([])
   const [userdata,setuserdata]=useState(null)
-
+  
   const handleInputChange = event => {
     setsearch(event.target.value)
   }
@@ -72,7 +72,7 @@ function Main() {
         {/* Left-Hand Side  */}
         <section className="col-md-2 col-xs-2 leftContentColumn">
 
-          <UserProfile />
+          <UserProfile user={user}/>
           <GetStartedList />
 
         </section>

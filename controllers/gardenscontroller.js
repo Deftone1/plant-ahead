@@ -45,5 +45,11 @@ module.exports = {
       .findOneAndUpdate({_id:req.params.id}, {$push:{plants:req.params.plants_id}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  removeplant: function(req,res){
+    db.Garden
+      .findOneAndUpdate({_id:req.params.id}, {$pull:{plants:req.params.plants_id}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+    }
 };

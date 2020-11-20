@@ -3,9 +3,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 
 function SavedPlants(props) {
   const { plants, gardens, addplanttogarden } = props;
+  
 
-  const plantList = plants.map((plant) => (
-    <div>
+  const plantList = plants.map((plant, index) => (
+    <div key={index}>
       <p className="card-text garden-text">
         {plant.name} <br></br>
       </p>
@@ -15,9 +16,10 @@ function SavedPlants(props) {
             Add to Project
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            {gardens.map((garden) => (
+            {gardens.map((garden,index) => (
               <Dropdown.Item
                 href="#/action-1"
+                key={index}
                 onClick={() => addplanttogarden(garden._id, plant._id)}
               >
                 {garden.name}
@@ -37,7 +39,7 @@ function SavedPlants(props) {
     </div>
   ));
 
-  console.log(plants);
+  
 
   return (
     <div className="col-sm-6">

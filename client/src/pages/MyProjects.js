@@ -55,7 +55,6 @@ function MyProjects() {
   }
   const creategarden = event => {
     event.preventDefault();
-    console.log(gardentitle)
     API.createGarden({
       name: gardentitle,
       user_id: user.id
@@ -68,6 +67,13 @@ function MyProjects() {
   const addplanttogarden = (garden, plant) => {
     API.savePlanttoGarden(garden, plant)
   }
+
+  const removegarden =(id) => {
+    API.deletegardenbyid(id).then(res=> loadGardens(user.id))
+    .catch(err=>console.log(err))
+  }
+
+
   return (
     <animated.div className="MyProjects" style={fade}>
       <Title />
@@ -89,7 +95,7 @@ function MyProjects() {
           </div>
         </form>
       <div className="row">
-        <GardenCard gardens={gardens} />
+        <GardenCard gardens={gardens} removegarden={removegarden}/>
         <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
       </div>
       <div><img
