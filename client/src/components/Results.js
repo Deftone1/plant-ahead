@@ -24,7 +24,7 @@ function Results(props) {
                                 <p className="card-text">{tree.genus}</p>
                             </div>
                             <div className="col">
-                                <button className="addPlanToList btn btn-primary" style={{ fontSize: "15px" }} id={tree.id} onClick={(event) => props.handleSavedButton(event)}>Add to List</button>
+                                <button className="addPlanToList btn-primary add-to-list" style={{ fontSize: "15px" }} id={tree.id} onClick={(event) => props.handleSavedButton(event)}>Add to List</button>
                             </div>
 
                         </div>

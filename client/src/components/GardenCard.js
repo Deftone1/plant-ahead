@@ -58,7 +58,7 @@ const removeplantfromgarden = (garden, plant) =>{
   .map((garden)=>(
     <div key={garden._id} className="border d-flex justify-content-between">
     <button className=" btn3 btn-primary btn-sm" id={garden._id} onClick={gardenmodalclick}>{garden.name}</button>
-    <button className=" btn3 btn-outline-dark btn-sm" onClick={()=>removegarden(garden._id)}>Delete</button> 
+    <button className=" btn3 btn-outline-danger btn-sm" onClick={()=>removegarden(garden._id)}>Delete</button> 
   </div>
   ))
 
