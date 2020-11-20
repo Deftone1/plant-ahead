@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
 function SavedPlants(props) {
-  const { plants, gardens, addplanttogarden } = props;
+  const { plants, gardens, addplanttogarden, deleteallplants,user } = props;
   
 
   const plantList = plants.map((plant, index) => (
@@ -48,7 +48,7 @@ function SavedPlants(props) {
           <h5 className="card-title garden-title">Saved Plants</h5>
           {plantList}
 
-          <br></br><button className="btn1 btn-outline-primary btn-sm">Clear Saved Plants</button>
+          <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=>deleteallplants(user.id)}>Clear Saved Plants</button>
         </div>
       </div>
     </div>
