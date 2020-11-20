@@ -48,7 +48,17 @@ function MyProjects() {
       .catch(err => console.log(err))
 
   }
-
+  const deleteallgardens = (user_id) =>{
+    API.cleargardens(user_id).then((response) => {
+      loadGardens(user.id)
+    });
+  };
+  const deleteallplants = (user_id) =>{
+    API.clearplantsbyuserid(user_id).then((response) => {
+      loadPlants(user.id)
+    });
+  };
+  
   const handleformchange = event => {
     event.preventDefault();
     setgardentitle(event.target.value)
@@ -95,8 +105,8 @@ function MyProjects() {
           </div>
         </form>
       <div className="row">
-        <GardenCard gardens={gardens} removegarden={removegarden}/>
-        <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
+        <GardenCard gardens={gardens} removegarden={removegarden} deleteallgardens={deleteallgardens} user={user}/>
+        <SavedPlants user={user} plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} deleteallplants={deleteallplants} />
       </div>
       <div><img
         className="plantImageTwo"

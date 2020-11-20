@@ -8,7 +8,7 @@ import GardenModal from "../components/GardenModal";
 import { useState, useEffect} from "react";
 import API from "../util/API";
 function GardenCard(props) {
-  const { gardens, removegarden } = props;
+  const { gardens, removegarden, deleteallgardens,user } = props;
   const [currentgarden, setcurrentgarden] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -94,7 +94,7 @@ const removeplantfromgarden = (garden, plant) =>{
 
           /> 
 
-        <br></br><button className="btn1 btn-outline-primary btn-sm">Clear Projects</button>
+        <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=> deleteallgardens(user.id)}>Clear Projects</button>
         </div>
       </div>
     </div>
