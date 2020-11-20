@@ -30,7 +30,7 @@ function SavedPlants(props) {
 
         <button
           
-          className="btn2 btn-sm"
+          className="btn2 btn-outline-danger btn-sm"
           id={plant._id}
           onClick={() => props.removeplant(plant._id)}
         >Remove Plant</button>
