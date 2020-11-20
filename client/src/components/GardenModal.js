@@ -1,13 +1,9 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
-import ModalHeader from "react-bootstrap/ModalHeader";
-import ModalFooter from "react-bootstrap/ModalFooter";
-import ModalTitle from "react-bootstrap/ModalTitle";
-// working on this one
 
 function GardenModal(props) {
     const {hideModal, isOpen, modalLoaded, title} = props;
+      
     return (
         <Modal show={isOpen} onHide={hideModal} onEntered={modalLoaded}>
             <Modal.Header>

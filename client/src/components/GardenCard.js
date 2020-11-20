@@ -29,6 +29,8 @@ function GardenCard(props) {
     setTitle("Modal Ready");
   };
 
+
+
   const gardenlist= gardens
   .map((garden)=>(
     <div className="border d-flex justify-content-between">
@@ -36,6 +38,11 @@ function GardenCard(props) {
     <button className=" btn btn-outline-primary" onClick={hideModal}>Edit</button> 
   </div>
   ))
+
+
+ 
+
+
   return (
     <div className="col-sm-6">
       <div className="card garden-card">
@@ -53,6 +60,8 @@ function GardenCard(props) {
           isOpen={isOpen}
           modalLoaded={modalLoaded}
           title={title}
+         
+
           /> 
 
         <button className="btn btn-primary">Clear Projects</button>
