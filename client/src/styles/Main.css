@@ -1,19 +1,6 @@
-.MainPage {
-    /* background-color: red; */
-    /* height: 100vh; */
-}
 
-.MainPageContainer {
-    /* background-color: green; */
-    /* height: 80vh; */
-    
-    
-}
 
-.leftContentColumn {
-    /* background-color: grey; */
 
-}
 
 .mainSection {
     
@@ -50,4 +37,9 @@
     font-size: 14px;
     margin-left: 6px;
     
+}
+
+.user-profile {
+    text-align: center;
+    padding: 3px;
 }
