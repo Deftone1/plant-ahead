@@ -1,5 +1,6 @@
 import React from "react";
 import Tree from "../images/Tree.svg";
+import "../styles/community.css";
 function JoinCommunityTitle(props) {
 
     return (
@@ -8,8 +9,8 @@ function JoinCommunityTitle(props) {
             <div className="card-body col-md-12 col-sm-3 d-flex justify-content-between align-items-center">
                 <span><img src={Tree} alt="Tree" /></span>
                 <div >
-                    <h3>Join our Community</h3>
-                    <p>Find Tips and Ideas to Make Your Project Come to Life.</p>
+                    <h3 className="community-welcome">Join our Community</h3>
+                    <p>Tips and ideas to make your project come to life.</p>
                 </div>
 
                 <span><img src={Tree} alt="Tree" /></span>
