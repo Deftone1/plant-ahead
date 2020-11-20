@@ -22,7 +22,6 @@ function Main() {
   });
 
   const { logout, user } = useAuth();
-<<<<<<< HEAD
   const [search, setsearch] = useState("");
   const [results, setresults] = useState([]);
   const [trees, settrees] = useState([]);
@@ -31,13 +30,6 @@ function Main() {
 
 
 
-=======
-  const [search, setsearch] = useState("")
-  const [results, setresults] = useState([])
-  const [trees, settrees] = useState([])
-  const [userdata,setuserdata]=useState(null)
-  
->>>>>>> edb1cb0d6416ef6285b86647ccde942cb4fabce7
   const handleInputChange = event => {
     setsearch(event.target.value)
   }
