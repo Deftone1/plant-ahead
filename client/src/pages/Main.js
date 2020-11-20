@@ -1,7 +1,7 @@
 
 import React from "react";
 import Title from "../components/Title";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAuth } from "../util/authContext";
 import "../styles/Main.css";
 import Results from "../components/Results";
@@ -67,7 +67,6 @@ function Main() {
     event.preventDefault();
     let savedplant = trees.filter(tree => JSON.stringify(tree.id) === event.target.id)
     savedplant = savedplant[0]
-    console.log(savedplant)
     API.savePlant(savedplant)
     .catch(err => console.log(err))
     setShow(true)
@@ -126,7 +125,7 @@ function Main() {
 
                 }}
               >
-                <Toast show={show} onClose={() => setShow(false)} delay={3000} autohide style={{minWidth:"300px"}}>
+                <Toast show={show} onClose={() => setShow(false)} delay={2000} autohide style={{minWidth:"300px"}}>
                   <Toast.Header style={{backgroundColor:"lightGreen"}}>
 
                     <strong className="mr-auto">You have added a Plant!</strong>

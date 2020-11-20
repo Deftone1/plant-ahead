@@ -1,14 +1,25 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useState } from "react";
+import Modal from "react-bootstrap/Modal";
 
 function SavedPlants(props) {
-  const { plants, gardens, addplanttogarden, deleteallplants,user } = props;
-  
+  const { plants, gardens, addplanttogarden, deleteallplants, user } = props;
+  // const for modal ====================================
+  const [title, setTitle] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  // =======================================================
+  const gardenModalClick = (event) => {
+
+    showModal();
+  };
+
+
 
   const plantList = plants.map((plant, index) => (
     <div key={index}>
       <p className="card-text garden-text">
-        {plant.name} <br></br>
+      {plant.name} <a role="img" aria-label="Memo" style={{ cursor: "pointer" }} onClick={gardenModalClick}>📝</a><br></br>
       </p>
       <div className="d-flex justify-content-center">
         <Dropdown>
@@ -16,7 +27,7 @@ function SavedPlants(props) {
             Add to Project
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            {gardens.map((garden,index) => (
+            {gardens.map((garden, index) => (
               <Dropdown.Item
                 href="#/action-1"
                 key={index}
@@ -29,17 +40,31 @@ function SavedPlants(props) {
         </Dropdown>
 
         <button
-          
+
           className="btn2 btn-sm"
           id={plant._id}
           onClick={() => props.removeplant(plant._id)}
         >Remove Plant</button>
-       
+
       </div>
     </div>
   ));
+  // ===========================Modal functions============================================
+  const showModal = () => {
+    setIsOpen(true);
+  };
 
-  
+  const hideModal = () => {
+    setIsOpen(false);
+    // use this to set bullet point lists for plants
+    setTitle("");
+  };
+
+  const modalLoaded = () => {
+    setTitle("Example Title");
+  };
+
+  // ====================================================================================
 
   return (
     <div className="col-sm-6">
@@ -48,10 +73,36 @@ function SavedPlants(props) {
           <h5 className="card-title garden-title">Saved Plants</h5>
           {plantList}
 
-          <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=>deleteallplants(user.id)}>Clear Saved Plants</button>
+          <Modal show={isOpen} onHide={hideModal}>
+            <Modal.Header>
+              <Modal.Title>[Plant Name Here if Possible]</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              
+              <form>
+
+                <div className="form-group">
+                  <label htmlFor="exampleFormControlInput1">Add a Title to Your Note:</label>
+                  <input type="input" className="form-control" id="NoteTitle" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="exampleFormControlTextarea1">Notes:</label>
+                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+              </form>
+      
+            </Modal.Body>
+            <Modal.Footer>
+              <button className=" btn btn-danger" onClick={hideModal}>Exit</button>
+            </Modal.Footer>
+          </Modal>
+
+          <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={() => deleteallplants(user.id)}>Clear Saved Plants</button>
         </div>
       </div>
     </div>
-)
+  )
 }
 export default SavedPlants;
