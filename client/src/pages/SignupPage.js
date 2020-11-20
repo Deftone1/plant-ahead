@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useAuth } from "../util/authContext";
 import leaves from "../images/leaves.png";
 import "../styles/signup-login.css";
+import { useSpring, animated } from "react-spring";
 
 const styles = {
   wrapper: {
@@ -19,6 +20,12 @@ const styles = {
 };
 
 function SignupPage() {
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
   const { signup } = useAuth();
   const history = useHistory();
   const [formState, setFormState] = useState({ username: "", password: "" });
@@ -50,41 +57,41 @@ function SignupPage() {
     }
   };
   return (
-    <div>
-      <div className ="form-section">
-      <h1>Signup</h1>
-      <div style={styles.wrapper}>
-        <div>{isPending && "Loading..."}</div>
-        <form className="signup-login" style={styles.form} onSubmit={handleSubmit}>
-          <label htmlFor="username">Username</label>
-          <input className="input-font"
-            type="text"
-            name="username"
-            id="username"
-            value={formState.username}
-            onChange={handleInputChange}
-          />
-          <br />
-          <label htmlFor="password">Password</label>
-          <input className="input-font"
-            type="password"
-            name="password"
-            id="password"
-            value={formState.password}
-            onChange={handleInputChange}
-          />
-          <button type="submit" style={styles.submitButton}>
-            Submit
+    <animated.div style={fade}>
+      <div className="form-section">
+        <h1>Signup</h1>
+        <div style={styles.wrapper}>
+          <div>{isPending && "Loading..."}</div>
+          <form className="signup-login" style={styles.form} onSubmit={handleSubmit}>
+            <label htmlFor="username">Username</label>
+            <input className="input-font"
+              type="text"
+              name="username"
+              id="username"
+              value={formState.username}
+              onChange={handleInputChange}
+            />
+            <br />
+            <label htmlFor="password">Password</label>
+            <input className="input-font"
+              type="password"
+              name="password"
+              id="password"
+              value={formState.password}
+              onChange={handleInputChange}
+            />
+            <button type="submit" style={styles.submitButton}>
+              Submit
           </button>
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
       <img
         className="plantImageTwo"
         src={leaves}
         alt="plant-ahead-welcome"
       ></img>
-    </div>
+    </animated.div>
   );
 }
 export default SignupPage;

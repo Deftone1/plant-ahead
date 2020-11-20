@@ -8,10 +8,19 @@ import GardenCard from "../components/GardenCard";
 import SavedPlants from "../components/SavedPlants";
 import Tree from "../images/Tree.svg";
 import leaves from "../images/leaves.png";
-
+import { useSpring, animated } from "react-spring";
 
 
 function MyProjects() {
+
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
+
+
   const [data, setData] = useState(null);
   const { logout, user } = useAuth();
   const [plants, setplants] = useState([]);
@@ -20,45 +29,47 @@ function MyProjects() {
   const loadPlants = (user_id) => {
     API.getPlantbyuserid(user_id).then((response) => {
       setplants(response.data);
-  });
-};
+    });
+  };
 
-const loadGardens = (user_id) => {
-  API.getgardenbyuserid(user_id).then((response) => {
-    setgardens(response.data);
-});
-};
+  const loadGardens = (user_id) => {
+    API.getgardenbyuserid(user_id).then((response) => {
+      setgardens(response.data);
+    });
+  };
 
-   useEffect(() => {
+  useEffect(() => {
     loadPlants(user.id)
     loadGardens(user.id)
-   }, []);
+  }, []);
 
-  const removeplant = (id)=>{
-    API.removeplantbyid(id).then(res=>loadPlants(user.id))
-    .catch(err=>console.log(err))
+  const removeplant = (id) => {
+    API.removeplantbyid(id).then(res => loadPlants(user.id))
+      .catch(err => console.log(err))
 
   }
 
-  const handleformchange = event =>{
+  const handleformchange = event => {
     event.preventDefault();
     setgardentitle(event.target.value)
   }
-  const creategarden = event =>{
+  const creategarden = event => {
     event.preventDefault();
     console.log(gardentitle)
     API.createGarden({
-      name:gardentitle,
-      user_id:user.id}).then(res =>{
-        setgardentitle("");
-        loadGardens(user.id)}
-        )
+      name: gardentitle,
+      user_id: user.id
+    }).then(res => {
+      setgardentitle("");
+      loadGardens(user.id)
+    }
+    )
   }
-  const addplanttogarden = (garden, plant) =>{
-    API.savePlanttoGarden(garden,plant)
+  const addplanttogarden = (garden, plant) => {
+    API.savePlanttoGarden(garden, plant)
   }
   return (
-    <div className="MyProjects">
+    <animated.div className="MyProjects" style={fade}>
       <Title />
       <header>
         <h1>
@@ -68,26 +79,26 @@ const loadGardens = (user_id) => {
       <br></br>
 
       <div className="row">
-  <GardenCard gardens={gardens}/>
-  <SavedPlants plants={plants} gardens={gardens}removeplant={removeplant} addplanttogarden={addplanttogarden}/>
-  <form className="col">
-        <div className="form-group">
-          <div className="create-garden">
-          <input onChange={handleformchange} value={gardentitle}>
+        <GardenCard gardens={gardens} />
+        <SavedPlants plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} />
+        <form className="col">
+          <div className="form-group">
+            <div className="create-garden">
+              <input onChange={handleformchange} value={gardentitle}>
 
-          </input>
-          <button className="create" onClick={creategarden}>Create Garden</button>
+              </input>
+              <button className="create" onClick={creategarden}>Create Garden</button>
+            </div>
           </div>
-        </div>
-      </form>
-</div>
-<div><img
+        </form>
+      </div>
+      <div><img
         className="plantImageTwo"
         src={leaves}
         alt="plant-ahead-welcome"
       ></img></div>
       
-    </div>
+    </animated.div>
   );
 }
 export default MyProjects;
