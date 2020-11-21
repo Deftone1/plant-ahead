@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/Results.css";
-import { useEffect, useState } from "react";
+
 
 // changed this to a function not a variable
 function Results(props) {

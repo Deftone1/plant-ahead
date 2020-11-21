@@ -4,7 +4,7 @@ function UserExperienceCard(props) {
 
     return (
 
-        <div className="col-md-8 card">
+        <div className="col-md-8 card mt-4">
             <div className=" row d-flex mt-2 ">
                 <div className=" col-md-11 card shadow mx-auto" >
 

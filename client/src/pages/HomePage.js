@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import API from "../util/API";
+import { useState } from "react";
 import "../styles/Home.css";
 import Tree from "../images/Tree.svg";
 import plantMain from "../images/plant-welcome.png";
 import Plant from "../images/Plant.png";
 import Community from "../images/Community.png";
-import { Link } from "react-router-dom";
+
 import { useSpring, animated } from "react-spring";
 
 

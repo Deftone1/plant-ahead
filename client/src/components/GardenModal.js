@@ -1,15 +1,9 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
-import ModalHeader from "react-bootstrap/ModalHeader";
-import ModalFooter from "react-bootstrap/ModalFooter";
-import ModalTitle from "react-bootstrap/ModalTitle";
-import API from "../util/API"
-
 
 function GardenModal(props) {
-    const {hideModal, isOpen, modalLoaded, title, currentgarden, currentid, removeplantfromgarden} = props;
-    console.log(currentgarden)
+    const {hideModal, isOpen, title, currentgarden, currentid, removeplantfromgarden} = props;
+   
     const plantsingarden = currentgarden.map(plantingarden =>(
         <div className="d-flex justify-content-between border">
         <li className="list-group-item">{plantingarden.name} </li>

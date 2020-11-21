@@ -1,11 +1,7 @@
 import React from "react";
-import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
-import ModalHeader from "react-bootstrap/ModalHeader";
-import ModalFooter from "react-bootstrap/ModalFooter";
-import ModalTitle from "react-bootstrap/ModalTitle";
+
 import GardenModal from "../components/GardenModal";
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import API from "../util/API";
 function GardenCard(props) {
   const { gardens, removegarden, deleteallgardens,user } = props;
@@ -60,7 +56,7 @@ const removeplantfromgarden = (garden, plant) =>{
 
   const gardenlist= gardens
   .map((garden)=>(
-    <div className="border d-flex justify-content-between">
+    <div key={garden._id} className="border d-flex justify-content-between">
     <button className=" btn3 btn-primary btn-sm" id={garden._id} onClick={gardenmodalclick}>{garden.name}</button>
     <button className=" btn3 btn-outline-danger btn-sm" onClick={()=>removegarden(garden._id)}>Delete</button> 
   </div>

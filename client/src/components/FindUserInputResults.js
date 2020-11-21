@@ -4,7 +4,7 @@ function FindUserInputResults(props) {
 
     return (
 
-        <div className="col-md-3 col-xs-5 pt-2  ">
+        <div className="col-md-3 col-xs-5 pt-2  m-4">
             <div className=" d-flex justify-content-center   ">
                 <div className="card shadow " style={{ width: '25rem' }}>
 
