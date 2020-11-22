@@ -10,29 +10,29 @@ function FindUserInputResults(props) {
 
                     <div className="card-body ">
 
-                        <h5 className="card-title text-center">Find User Input</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">Plant Searched: {"[Plant Searched goes here]"}</h6>
+                        <h5 className="card-title text-center">Browse User Experience Reviews</h5>
+                        
                         <ul className="list-group ml-0 "  >
 
                             <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                 <h6>Rose</h6>
-                                <button type="button" className=" btn btn-primary d-flex justify-content-between " style={{ fontSize: "15px" }}>User: UserName Here</button>
+                                <button type="button" className=" btn2 btn-primary d-flex justify-content-between " style={{ fontSize: "15px" }}>LeslieJacobs2</button>
                             </li>
                             <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                 <h6>Fly-Trap </h6>
-                                <button type="button" className=" btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
+                                <button type="button" className=" btn2 btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>PeteL1975</button>
                             </li>
                             <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                 <h6>Peas</h6>
-                                <button type="button" className=" btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
+                                <button type="button" className=" btn2 btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>LindaJohnson</button>
                             </li>
                             <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                 <h6>Cactus</h6>
-                                <button type="button" className=" btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
+                                <button type="button" className=" btn2 btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>NatureMan50</button>
                             </li>
                             <li className=" list-group-item disabled d-flex justify-content-between align-items-center rounded" >
                                 <h6>Succulent</h6>
-                                <button type="button" className=" btn btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>User: UserName Here</button>
+                                <button type="button" className=" btn2 btn-primary d-flex justify-content-between" style={{ fontSize: "15px" }}>TreeClimber</button>
                             </li>
 
 

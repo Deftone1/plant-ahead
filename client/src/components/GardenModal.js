@@ -19,14 +19,14 @@ function GardenModal(props) {
             {/* second Header with Plant name */}
 
             <Modal.Body>
-                <h5>Here are your current plants in your garden:</h5>
+                <h5>Here are the current plants in your garden:</h5>
                 <ul className="list-group">
                 {plantsingarden}  
                 </ul>
 
             </Modal.Body>
             <Modal.Footer>
-                <button className=" btn btn-danger" onClick={hideModal}>Exit</button>
+                <button className=" btn2 btn-danger" onClick={hideModal}>Exit</button>
             </Modal.Footer>
         </Modal>
 
