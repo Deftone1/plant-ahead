@@ -21,8 +21,9 @@ module.exports={
           .catch(err => res.status(422).json(err));
       },
       update: function(req, res) {
+        console.log(req.body)
         db.Plant
-          .findOneAndUpdate({ _id: req.params.id },{notes:req.body})
+          .findOneAndUpdate({ _id: req.params.id },{notes:req.body.notes})
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },

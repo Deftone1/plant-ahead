@@ -10,7 +10,8 @@ const getplantbyid = (id) => axios.get("api/plants/"+id)
 const removeplantbyid = (id) => axios.delete("/api/plants/" +id)
 
 const getPlantbyuserid = (id) => axios.get("api/plants/user/"+id)
-const deleteallplants = (id) => axios.get("api/plants/user/"+id)
+
+const deleteallplants = (id) => axios.delete("api/plants/user/"+id)
 // example api request for public data
 const getPublicExample = () => axios.get("/api/unprotected");
 
@@ -30,6 +31,8 @@ const getgardenbyuserid = (id) => axios.get("/api/gardens/user/"+id)
 const cleargardens = (id) => axios.delete("/api/gardens/user/"+id)
 
 const clearplantsbyuserid = (id) => axios.delete("api/plants/user/"+id)
-const API = {deleteallplants, cleargardens, deletePlantfromGarden, getgardenbyid, getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid, savePlanttoGarden, getplantbyid, deletegardenbyid, clearplantsbyuserid};
+
+const addtonote = (id,plantnote) => axios.put("api/plants/"+id, plantnote)
+const API = {addtonote, deleteallplants, cleargardens, deletePlantfromGarden, getgardenbyid, getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid, savePlanttoGarden, getplantbyid, deletegardenbyid, clearplantsbyuserid};
 
 export default API;
