@@ -2,28 +2,44 @@ import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
+import API from "../util/API"
 
 function SavedPlants(props) {
-  const { plants, gardens, addplanttogarden, deleteallplants, user } = props;
+  const { plants, gardens, addplanttogarden, deleteallplants, user, loadplants } = props;
   // const for modal ====================================
   const [title, setTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [currentplant, setcurrentplant]=useState(
+    {_id: "", 
+    name: "",
+     image_url: "",
+      genus: "", 
+      user_id: "", 
+      notes:""
+    }
+  )
+
+
   // =======================================================
   const showModal = () => {
     setIsOpen(true);
   };
 
-  const modalLoaded = (plantName) => {
+  // const modalLoaded = (plantName) => {
     
-    setTitle(plantName);
-  };
+  //   setTitle(plantName);
+  // };
   const gardenModalClick = (plant) => {
-    
+    setcurrentplant({})
     showModal();
-    modalLoaded(plant.name);
+    setcurrentplant(plant)
+    console.log(currentplant)
+
+   // modalLoaded(plant.name);
   };
 
 
+ 
 
   const plantList = plants.map((plant, index) => (
     <div key={index}>
@@ -71,6 +87,18 @@ function SavedPlants(props) {
     // use this to set bullet point lists for plants
     setTitle("");
   };
+  const handlemodalnotechange = event =>{
+    event.preventDefault()
+    setcurrentplant(currentplant => ({...currentplant, notes: event.target.value}))
+    console.log(currentplant)
+  }
+  
+  const handlemodalsubmit = event =>{
+    event.preventDefault()
+    console.log("submit")
+    API.addtonote(currentplant._id, currentplant)
+    loadplants(user.id)
+  }
 
   
 
@@ -85,21 +113,22 @@ function SavedPlants(props) {
 
           <Modal  show={isOpen} onHide={hideModal} >
             <Modal.Header >
-              <Modal.Title>{title}</Modal.Title>
+              <Modal.Title>{currentplant.name}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-              
+              <img src={currentplant.image_url} style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} />
+              <div>
+                <h3>{currentplant.genus}</h3>
+                <h3>{currentplant.family}</h3>
+              </div>
               <form>
 
                 <div className="form-group">
-                  <label htmlFor="exampleFormControlInput1">Add a Title to Your Note:</label>
-                  <input type="input" className="form-control" id="NoteTitle" />
+                  <label htmlFor="exampleFormControlTextarea1">Note:</label>
+                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" value={currentplant.notes} onChange={handlemodalnotechange}></textarea>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="exampleFormControlTextarea1">Notes:</label>
-                  <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
+                <button onClick={handlemodalsubmit}> save </button>
 
               </form>
       

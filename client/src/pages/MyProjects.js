@@ -106,7 +106,7 @@ function MyProjects() {
         </form>
       <div className="row">
         <GardenCard gardens={gardens} removegarden={removegarden} deleteallgardens={deleteallgardens} user={user}/>
-        <SavedPlants user={user} plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} deleteallplants={deleteallplants} />
+        <SavedPlants user={user} plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} deleteallplants={deleteallplants} loadplants={loadPlants} />
       </div>
       <div><img
         className="plantImageTwo"

@@ -32,6 +32,7 @@ function Main() {
 
   const handleInputChange = event => {
     setsearch(event.target.value)
+    console.log(search)
   }
 
   const handleFormSubmit = (event) => {
@@ -47,7 +48,8 @@ function Main() {
             image_url: result.image_url,
             genus: result.genus,
             user_id: user.id,
-            id: result.id
+            id: result.id,
+            notes:"placeholder"
           }
           return result;
         })
