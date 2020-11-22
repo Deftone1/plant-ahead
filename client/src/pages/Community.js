@@ -37,7 +37,7 @@ function Community() {
 
             /> */}
 
-            <section className="row  mx-auto justify-content-md-center px-5">
+            <section className="row  mx-auto justify-content-md-center px-5 mb-5">
 
                 <FindUserInputResults />
 

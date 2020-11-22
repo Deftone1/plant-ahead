@@ -47,8 +47,10 @@ app.get("/api/protected/trefle/:tree",  (req, res) => {
   let tree = req.params.tree
   let results
 (async () => {
-	const response = await fetch("https://trefle.io/api/v1/plants/search?token="+process.env.TOKEN+"&q="+tree);
+  const response = await fetch("https://trefle.io/api/v1/plants/search?token="+process.env.TOKEN+"&q="+tree);
+  
    results = await response.json();
+   
 	res.json(results.data)
 })();
 });
