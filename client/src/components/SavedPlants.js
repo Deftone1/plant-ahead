@@ -9,9 +9,18 @@ function SavedPlants(props) {
   const [title, setTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   // =======================================================
-  const gardenModalClick = (event) => {
+  const showModal = () => {
+    setIsOpen(true);
+  };
 
+  const modalLoaded = (plantName) => {
+    
+    setTitle(plantName);
+  };
+  const gardenModalClick = (plant) => {
+    
     showModal();
+    modalLoaded(plant.name);
   };
 
 
@@ -19,8 +28,9 @@ function SavedPlants(props) {
   const plantList = plants.map((plant, index) => (
     <div key={index}>
       <p className="card-text garden-text">
-      {plant.name} <a role="img" aria-label="Memo" style={{ cursor: "pointer" }} onClick={gardenModalClick}>📝</a><br></br>
+      {plant.name} <span role="img" aria-label="Memo" style={{ cursor: "pointer" }} onClick={()=>gardenModalClick(plant)}>📝</span><br></br>
       </p>
+      
       <div className="d-flex justify-content-center">
         <Dropdown>
           <Dropdown.Toggle className="btn1 btn-success btn-sm" id={plant._id}>
@@ -49,10 +59,12 @@ function SavedPlants(props) {
       </div>
     </div>
   ));
+
+
+
+
   // ===========================Modal functions============================================
-  const showModal = () => {
-    setIsOpen(true);
-  };
+  
 
   const hideModal = () => {
     setIsOpen(false);
@@ -60,9 +72,7 @@ function SavedPlants(props) {
     setTitle("");
   };
 
-  const modalLoaded = () => {
-    setTitle("Example Title");
-  };
+  
 
   // ====================================================================================
 
@@ -73,9 +83,9 @@ function SavedPlants(props) {
           <h5 className="card-title garden-title">Saved Plants</h5>
           {plantList}
 
-          <Modal show={isOpen} onHide={hideModal}>
-            <Modal.Header>
-              <Modal.Title>[Plant Name Here if Possible]</Modal.Title>
+          <Modal  show={isOpen} onHide={hideModal} >
+            <Modal.Header >
+              <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
