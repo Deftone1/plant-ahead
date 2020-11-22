@@ -24,7 +24,7 @@ function Main() {
   const { logout, user } = useAuth();
   const [search, setsearch] = useState("");
   const [results, setresults] = useState([]);
-  const [trees, settrees] = useState([]);
+  const [trees, setTrees] = useState([]);
   const [userdata, setuserdata] = useState(null);
   const [show, setShow] = useState(false);
 
@@ -34,7 +34,7 @@ function Main() {
     setsearch(event.target.value)
   }
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
     API.trefle(search)
       .then(res => {
@@ -51,7 +51,7 @@ function Main() {
           }
           return result;
         })
-        settrees(results)
+        setTrees(results)
       })
       .catch(err => {
         throw err
@@ -74,7 +74,7 @@ function Main() {
   }
 
   return (
-    <animated.div className="MainPage mb-5" style={fade}>
+    <animated.div className="MainPage mb-5" style={fade} >
       <Title />
 
       <div className="row  container-fluid MainPageContainer mx-auto">
