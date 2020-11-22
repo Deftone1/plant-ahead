@@ -2,12 +2,12 @@ import React from "react";
 import Cactus from "../images/cactus.png";
 function UserExperienceCard(props) {
   return (
-    <div className="col-md-8 card mt-4">
+    <div className="col-md-8 card mt-4 ">
       <div className=" row d-flex mt-2 ">
        
       </div>
       {/* User Experience Goes here */}
-      <div className=" d-flex justify-content-center   ">
+      <div className=" d-flex justify-content-center  mb-3 ">
         <div className="card shadow col-md-11 mt-2" style={{ width: "50rem" }}>
           <div className="pl-4 pt-4">
             
