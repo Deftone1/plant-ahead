@@ -40,7 +40,7 @@ function HomePage() {
       ></img></div>
       <br></br>
       <br></br>
-      <section>
+      <section className="section-home">
         <p><span className="welcome-font">
           Welcome to Plan(t) Ahead.</span><br></br>
 
