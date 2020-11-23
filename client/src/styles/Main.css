@@ -13,7 +13,9 @@
     
     
 }
-
+.results-box {
+    border-radius: 20px;
+}
 .search-results {
     padding-top: 10px;
 }
@@ -65,4 +67,5 @@
 .plantgrow {
     width: 100%;
     opacity: 0.8;
+    border-radius: 20px;
 }
