@@ -8,7 +8,7 @@ import Results from "../components/Results";
 import SearchForm from "../components/SearchForm";
 import UserProfile from "../components/UserProfile";
 import GetStartedList from "../components/GetStartedList";
-import Footer from "../components/Footer";
+
 import API from "../util/API";
 import { useSpring, animated } from "react-spring";
 // import Toast from 'react-bootstrap/Toast';
@@ -79,7 +79,7 @@ function Main() {
     <animated.div className="MainPage mb-5" style={fade} >
       <Title />
 
-      <div className="row  container-fluid MainPageContainer mx-auto">
+      <div className="row  container-fluid MainPageContainer mx-auto test">
 
         {/* Left-Hand Side  */}
         <section className="col-md-2 col-xs-2 leftContentColumn">
@@ -90,7 +90,7 @@ function Main() {
         </section>
 
         {/* Main section starts here Right-Side*/}
-        <section className="col test">
+        <section className="col ">
 
           <SearchForm
             handleFormSubmit={handleFormSubmit}
@@ -119,7 +119,7 @@ function Main() {
 
       </div>
 
-      <Footer />
+      
 
     </animated.div>
   );

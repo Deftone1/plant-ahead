@@ -3,7 +3,7 @@
  .searchResultImages {
      overflow: hidden;
      overflow-y: scroll;
-     max-height: 45vh;
+     max-height: 60vh;
  }
 
  .add-to-list {

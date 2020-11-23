@@ -43,7 +43,7 @@ header {
 .plantImageHeader {
     width: 100%;
     padding: 3px;
-    border: 3px solid rgb(0, 0, 0);
+    border: 2px solid rgb(0, 0, 0);
 }
 
 button {
