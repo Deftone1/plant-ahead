@@ -102,7 +102,6 @@ function Main() {
 
             <Results trees={trees} handleSavedButton={saveplantbutton} />
 
-
             
              <div
               aria-live="polite"
@@ -111,9 +110,6 @@ function Main() {
               style={{
                 position: 'relative',
                 minHeight: '200px',
-                
-                
-
 
               }}
             >
@@ -123,8 +119,6 @@ function Main() {
                   top: -130,
                   right: 200,
                   
-                  
-
                 }}
               >
                 <Toast show={show} onClose={() => setShow(false)} delay={2000} autohide style={{minWidth:"300px"}}>

@@ -115,9 +115,9 @@ function SavedPlants(props) {
             <Modal.Header >
               <Modal.Title>{currentplant.name}</Modal.Title>
             </Modal.Header>
+              <img className="img-thumbnail mx-auto mt-3" src={currentplant.image_url} style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} />
 
             <Modal.Body>
-              <img src={currentplant.image_url} style={{ width: "250px", maxHeight: "200px", objectFit: "cover" }} />
               <div>
                 <h3>{currentplant.genus}</h3>
                 <h3>{currentplant.family}</h3>
