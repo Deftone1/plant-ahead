@@ -1,6 +1,24 @@
 
+.test {
+    background-color: rgba(124, 167, 123, 0.1);
+    margin-left: 20px;
+    
+}
 
+.results {
+    background-color: rgba(124, 167, 123, 0.1);
+    padding-top: 3px;
+    padding-bottom: 5px;
+    
+    
+}
 
+.search-results {
+    padding-top: 10px;
+}
+.search {
+    background: white;
+}
 .mainSection {
     
     height: 30vh;

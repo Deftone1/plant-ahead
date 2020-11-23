@@ -90,7 +90,7 @@ function Main() {
         </section>
 
         {/* Main section starts here Right-Side*/}
-        <section className="col ">
+        <section className="col test">
 
           <SearchForm
             handleFormSubmit={handleFormSubmit}
