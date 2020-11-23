@@ -2,6 +2,7 @@
 .test {
     background-color: rgba(124, 167, 123, 0.1);
     margin-left: 20px;
+    height: 90vh
     
 }
 
@@ -21,7 +22,7 @@
 }
 .mainSection {
     
-    height: 30vh;
+    height: 20vh;
 }
 .imageRow {
     
@@ -59,4 +60,9 @@
 .user-profile {
     text-align: center;
     padding: 3px;
+}
+
+.plantgrow {
+    width: 100%;
+    opacity: 0.8;
 }
