@@ -13,7 +13,7 @@ function Results(props) {
     const plantList = trees
         .map((tree) => (
 
-            <div className="col mb-4 " key={tree.key} >
+            <div className="col mb-4 results" key={tree.key} >
                 <div className="card" >
                     {/* If there is no image use place holder */}
 
@@ -46,10 +46,10 @@ function Results(props) {
         ));
 
     return (
-        <div className="col-md-11 mx-auto border shadow results-box"  >
+        <div className="col-md-11 mx-auto border shadow results-box search"  >
             <div className="row">
                 <div className="col">
-                    <h3 className="searchTitle">Search Results:</h3>
+                    <h3 className="searchTitle search-results">Search Results:</h3>
                 </div>
 
                 {/* return card collection here */}
