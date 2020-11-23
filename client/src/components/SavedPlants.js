@@ -29,7 +29,7 @@ function SavedPlants(props) {
     
   //   setTitle(plantName);
   // };
-  const gardenModalClick = (plant) => {
+  const noteModalClick = (plant) => {
     setcurrentplant({})
     showModal();
     setcurrentplant(plant)
@@ -44,7 +44,7 @@ function SavedPlants(props) {
   const plantList = plants.map((plant, index) => (
     <div key={index}>
       <p className="card-text garden-text">
-      {plant.name} <span role="img" aria-label="Memo" style={{ cursor: "pointer" }} onClick={()=>gardenModalClick(plant)}>📝</span><br></br>
+      {plant.name} <span role="img" aria-label="Memo" style={{ cursor: "pointer" }} onClick={()=>noteModalClick(plant)}>📝</span><br></br>
       </p>
       
       <div className="d-flex justify-content-center">
