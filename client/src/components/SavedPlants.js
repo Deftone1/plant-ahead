@@ -33,7 +33,7 @@ function SavedPlants(props) {
     setcurrentplant({})
     showModal();
     setcurrentplant(plant)
-    console.log(currentplant)
+    
 
    // modalLoaded(plant.name);
   };
@@ -50,7 +50,7 @@ function SavedPlants(props) {
       <div className="d-flex justify-content-center">
         <Dropdown>
           <Dropdown.Toggle className="btn1 btn-success btn-sm" id={plant._id}>
-            Add to Project
+            Add to Garden
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {gardens.map((garden, index) => (
