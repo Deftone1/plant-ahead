@@ -19,7 +19,7 @@ const login = async (req, res) => {
 
     if (isPasswordCorrect) {
       const token = createToken(user);
-      res.json({ token, id: user._id });
+      res.json({ token, id: user._id, profile: user.profile });
     } else {
       res.status(401).end();
     }
@@ -31,7 +31,7 @@ const login = async (req, res) => {
 
 const signup = (req, res) => {
   const { username, password } = req.body;
-  const user = new db.User({ username, password });
+  const user = new db.User({ username, password, profile:"I love the outdoors and nature. I currently live in California and enjoy landscaping in my spare time." });
   return user
     .save()
     .then(() => {

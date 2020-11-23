@@ -16,6 +16,8 @@ const schema = new mongoose.Schema({
     required: true,
   },
 
+  profile:{type:String},
+
   gardens:[{type: String}]
   // add additional user fields as needed
 });

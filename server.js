@@ -9,6 +9,7 @@ const fetch = require("node-fetch")
 const axios = require("axios")
 const { json } = require("express");
 const routes = require("./routes")
+const db = require("./models");
 //const plantsController = require("./controllers/plantsController");
 
 if (!process.env.SERVER_SECRET) {
@@ -33,13 +34,22 @@ app.post("/api/auth/signup", authController.signup);
 app.get("/api/unprotected", (req, res) => res.json({ message: "public data" }));
 
 // example of a protected route. Request must have a valid token.
-app.get("/api/protected", hasValidToken, (req, res) => {
-  // the hasValidToken middleware decodes the payload and adds a "user" property to the request.
-  console.log(req.user);
-  res.json({ message: "protected data" });
-});
 
 
+app.get("/api/protected", hasValidToken, (req,res) =>{
+  db.User
+      .findOne({ _id: req.user.id})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+}
+)
+app.put("/api/protected", hasValidToken, (req,res) =>{
+  db.User
+      .findOneAndUpdate({ _id: req.user.id}, {profile:req.body.profile})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+}
+)
 
 
 
