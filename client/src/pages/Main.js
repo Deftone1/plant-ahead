@@ -11,7 +11,8 @@ import GetStartedList from "../components/GetStartedList";
 import Footer from "../components/Footer";
 import API from "../util/API";
 import { useSpring, animated } from "react-spring";
-import Toast from 'react-bootstrap/Toast';
+// import Toast from 'react-bootstrap/Toast';
+import ToastNotification from "../components/ToastNotification";
 
 function Main() {
   const fade = useSpring({
@@ -48,7 +49,11 @@ function Main() {
             genus: result.genus,
             user_id: user.id,
             id: result.id,
+<<<<<<< HEAD
             notes:""
+=======
+            notes: "placeholder"
+>>>>>>> 649c8788aa08672cf1dccb7bd82ac687b8fc807a
           }
           return result;
         })
@@ -69,9 +74,9 @@ function Main() {
     let savedplant = trees.filter(tree => JSON.stringify(tree.id) === event.target.id)
     savedplant = savedplant[0]
     API.savePlant(savedplant)
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
     setShow(true)
-   
+
   }
 
   return (
@@ -83,7 +88,7 @@ function Main() {
         {/* Left-Hand Side  */}
         <section className="col-md-2 col-xs-2 leftContentColumn">
 
-          <UserProfile user={user}/>
+          <UserProfile user={user} />
           <GetStartedList />
 
         </section>
@@ -101,42 +106,16 @@ function Main() {
 
             <Results trees={trees} handleSavedButton={saveplantbutton} />
 
-
-            
-             <div
-              aria-live="polite"
-              aria-atomic="true"
-              className="row"
+            <ToastNotification
+              setShow={setShow}
+              show={show}
               style={{
-                position: 'relative',
-                minHeight: '200px',
-                
-                
-
-
+                position: 'absolute',
+                top: -130,
+                right: 200,
               }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: -130,
-                  right: 200,
-                  
-                  
 
-                }}
-              >
-                <Toast show={show} onClose={() => setShow(false)} delay={2000} autohide style={{minWidth:"300px"}}>
-                  <Toast.Header style={{backgroundColor:"lightGreen"}}>
-
-                    <strong className="mr-auto">You have added a Plant!</strong>
-                    <small>just now</small>
-                  </Toast.Header>
-                  <Toast.Body>See saved Plants in Your Projects Page!.</Toast.Body>
-                </Toast>
-              </div>
-            </div> 
-
+            />
 
           </section>
 

@@ -9,7 +9,7 @@ import SavedPlants from "../components/SavedPlants";
 import Tree from "../images/Tree.svg";
 import leaves from "../images/leaves.png";
 import { useSpring, animated } from "react-spring";
-
+import ToastNotification from "../components/ToastNotification";
 
 function MyProjects() {
 
@@ -26,6 +26,11 @@ function MyProjects() {
   const [plants, setplants] = useState([]);
   const [gardentitle, setgardentitle] = useState("")
   const [gardens, setgardens] = useState([])
+  const [show, setShow] = useState(false);
+
+
+
+
   const loadPlants = (user_id) => {
     API.getPlantbyuserid(user_id).then((response) => {
       setplants(response.data);
@@ -48,17 +53,17 @@ function MyProjects() {
       .catch(err => console.log(err))
 
   }
-  const deleteallgardens = (user_id) =>{
+  const deleteallgardens = (user_id) => {
     API.cleargardens(user_id).then((response) => {
       loadGardens(user.id)
     });
   };
-  const deleteallplants = (user_id) =>{
+  const deleteallplants = (user_id) => {
     API.clearplantsbyuserid(user_id).then((response) => {
       loadPlants(user.id)
     });
   };
-  
+
   const handleformchange = event => {
     event.preventDefault();
     setgardentitle(event.target.value)
@@ -74,14 +79,29 @@ function MyProjects() {
     }
     )
   }
+
+  // Activate Toast here
   const addplanttogarden = (garden, plant) => {
+
     API.savePlanttoGarden(garden, plant)
+    setShow(true)
   }
 
-  const removegarden =(id) => {
-    API.deletegardenbyid(id).then(res=> loadGardens(user.id))
-    .catch(err=>console.log(err))
+  const removegarden = (id) => {
+    API.deletegardenbyid(id).then(res => loadGardens(user.id))
+      .catch(err => console.log(err))
   }
+
+
+
+
+  // Toast events here
+
+  const closeToast = () => {
+    setShow(false);
+
+  };
+
 
 
   return (
@@ -94,6 +114,7 @@ function MyProjects() {
       </header>
       <br></br>
 
+      <section className="row">
         <form className="project-form col-sm-6">
           <div className="form-group">
             <div className="create-garden">
@@ -101,11 +122,28 @@ function MyProjects() {
 
               </input>
               <button className="btn1" onClick={creategarden}>Create Garden</button>
+
             </div>
           </div>
         </form>
+        <ToastNotification
+          setShow={setShow}
+          show={show}
+          style={{
+            position: 'absolute',
+            top: -35,
+            left: 350,
+
+          }}
+
+        />
+      </section>
+
+
+
+
       <div className="row">
-        <GardenCard gardens={gardens} removegarden={removegarden} deleteallgardens={deleteallgardens} user={user}/>
+        <GardenCard gardens={gardens} removegarden={removegarden} deleteallgardens={deleteallgardens} user={user} />
         <SavedPlants user={user} plants={plants} gardens={gardens} removeplant={removeplant} addplanttogarden={addplanttogarden} deleteallplants={deleteallplants} loadplants={loadPlants} />
       </div>
       <div><img
@@ -113,7 +151,7 @@ function MyProjects() {
         src={leaves}
         alt="plant-ahead-welcome"
       ></img></div>
-      
+
     </animated.div>
   );
 }
