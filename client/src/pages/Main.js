@@ -49,11 +49,7 @@ function Main() {
             genus: result.genus,
             user_id: user.id,
             id: result.id,
-<<<<<<< HEAD
             notes:""
-=======
-            notes: "placeholder"
->>>>>>> 649c8788aa08672cf1dccb7bd82ac687b8fc807a
           }
           return result;
         })
