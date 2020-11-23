@@ -70,7 +70,7 @@ const removeplantfromgarden = (garden, plant) =>{
     <div className="col-sm-6">
       <div className="card garden-card">
         <div className="card-body shadow garden-body">
-          <h5 className="card-title garden-title">My Projects</h5>
+          <h5 className="card-title garden-title">My Gardens</h5>
           
 
           {/* <!-- Button trigger modal --> */}
@@ -90,7 +90,7 @@ const removeplantfromgarden = (garden, plant) =>{
 
           /> 
 
-        <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=> deleteallgardens(user.id)}>Clear Projects</button>
+        <br></br><button className="btn1 btn-outline-primary btn-sm" onClick={()=> deleteallgardens(user.id)}>Clear Gardens</button>
         </div>
       </div>
     </div>
