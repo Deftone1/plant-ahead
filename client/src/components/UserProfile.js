@@ -6,12 +6,11 @@ import { useState, useEffect } from "react";
 function UserProfile(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [profiletext, setprofiletext] = useState(null);
-    console.log(props.user)
     useEffect(() => {
       // example API call
       API.getProtectedExample().then((response) => {
         setprofiletext(response.data.profile);
-        console.log(response.data.profile)
+        
       });
     }, []);
     const showModal = () => {

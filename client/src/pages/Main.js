@@ -32,7 +32,6 @@ function Main() {
 
   const handleInputChange = event => {
     setsearch(event.target.value)
-    console.log(search)
   }
 
   const handleFormSubmit = (event) => {
@@ -49,7 +48,7 @@ function Main() {
             genus: result.genus,
             user_id: user.id,
             id: result.id,
-            notes:"placeholder"
+            notes:""
           }
           return result;
         })
