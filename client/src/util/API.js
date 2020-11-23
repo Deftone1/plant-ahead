@@ -3,6 +3,8 @@ import axios from "axios";
 // example api request for protected data (sends error i user isn't logged in)
 const getProtectedExample = () => axios.get("/api/protected");
 
+const profilechange = (profile) => axios.put("/api/protected", profile);
+
 const savePlant =(plantData) => axios.post("/api/plants/", plantData)
 
 const getplantbyid = (id) => axios.get("api/plants/"+id)
@@ -33,6 +35,6 @@ const cleargardens = (id) => axios.delete("/api/gardens/user/"+id)
 const clearplantsbyuserid = (id) => axios.delete("api/plants/user/"+id)
 
 const addtonote = (id,plantnote) => axios.put("api/plants/"+id, plantnote)
-const API = {addtonote, deleteallplants, cleargardens, deletePlantfromGarden, getgardenbyid, getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid, savePlanttoGarden, getplantbyid, deletegardenbyid, clearplantsbyuserid};
+const API = {profilechange, addtonote, deleteallplants, cleargardens, deletePlantfromGarden, getgardenbyid, getProtectedExample, getPublicExample, trefle, savePlant, getPlantbyuserid, removeplantbyid, createGarden, getgardenbyuserid, savePlanttoGarden, getplantbyid, deletegardenbyid, clearplantsbyuserid};
 
 export default API;
