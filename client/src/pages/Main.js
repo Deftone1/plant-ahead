@@ -11,7 +11,8 @@ import GetStartedList from "../components/GetStartedList";
 import Footer from "../components/Footer";
 import API from "../util/API";
 import { useSpring, animated } from "react-spring";
-import Toast from 'react-bootstrap/Toast';
+// import Toast from 'react-bootstrap/Toast';
+import ToastNotification from "../components/ToastNotification";
 
 function Main() {
   const fade = useSpring({
@@ -49,7 +50,7 @@ function Main() {
             genus: result.genus,
             user_id: user.id,
             id: result.id,
-            notes:"placeholder"
+            notes: "placeholder"
           }
           return result;
         })
@@ -70,9 +71,9 @@ function Main() {
     let savedplant = trees.filter(tree => JSON.stringify(tree.id) === event.target.id)
     savedplant = savedplant[0]
     API.savePlant(savedplant)
-    .catch(err => console.log(err))
+      .catch(err => console.log(err))
     setShow(true)
-   
+
   }
 
   return (
@@ -84,7 +85,7 @@ function Main() {
         {/* Left-Hand Side  */}
         <section className="col-md-2 col-xs-2 leftContentColumn">
 
-          <UserProfile user={user}/>
+          <UserProfile user={user} />
           <GetStartedList />
 
         </section>
@@ -102,8 +103,8 @@ function Main() {
 
             <Results trees={trees} handleSavedButton={saveplantbutton} />
 
-            
-             <div
+
+            <div
               aria-live="polite"
               aria-atomic="true"
               className="row"
@@ -113,7 +114,19 @@ function Main() {
 
               }}
             >
-              <div
+
+              <ToastNotification 
+              setShow={setShow}
+              show={show}
+              style={{
+                position: 'absolute',
+                top: -130,
+                right: 200,
+    
+            }}
+              
+              />
+              {/* <div
                 style={{
                   position: 'absolute',
                   top: -130,
@@ -129,8 +142,8 @@ function Main() {
                   </Toast.Header>
                   <Toast.Body>See saved Plants in Your Projects Page!.</Toast.Body>
                 </Toast>
-              </div>
-            </div> 
+              </div> */}
+            </div>
 
 
           </section>
