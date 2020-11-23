@@ -90,7 +90,6 @@ function SavedPlants(props) {
   const handlemodalnotechange = event =>{
     event.preventDefault()
     setcurrentplant(currentplant => ({...currentplant, notes: event.target.value}))
-    console.log(currentplant)
   }
   
   const handlemodalsubmit = event =>{
