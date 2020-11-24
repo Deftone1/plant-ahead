@@ -55,13 +55,11 @@ function Results(props) {
   ));
 
   return trees.length === 0 ? (
-    <div className="col-md-11 mx-auto shadow results-box">
-      <div className="row">
-        <img src={PlantGrow} alt="main screen growing plant" className="plantgrow"/>
-      </div>
+    <div className="col-md-10 mx-auto mt-4">
+      <img src={PlantGrow} alt="main screen growing plant" className="plantgrow"/>
     </div>
   ) : (
-    <div className="col-md-11 mx-auto border shadow results-box search">
+    <div className="col-md-11 mx-auto border shadow results-box search mt-4">
       <div className="row">
         <div className="col">
           <h3 className="searchTitle search-results">Search Results:</h3>

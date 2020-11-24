@@ -31,7 +31,7 @@ function UserProfile(props) {
     return (
 
 
-        <div className="row d-flex justify-content-center pt-2">
+        <div className="row d-flex justify-content-center pt-2 mt-3">
             <div className="card shadow" style={{ width: '50rem' }}>
                 <div className="card-body">
                     <img className="card-image rounded img-thumbnail mx-auto d-block" alt="Profile" style={{ maxWidth: "50%", maxHeight: "50%" }} src={Plant} />

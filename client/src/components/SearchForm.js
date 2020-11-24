@@ -2,7 +2,7 @@ import React from "react";
 
 function SearchForm(props) {
   return (
-    <section className="row mainSection d-flex  justify-content-center align-items-center">
+    <section className="row mainSection d-flex  justify-content-center align-items-center mt-3">
       <div className="col-md-4 col-xs-2 border pr-5 pl-5 pt-2 shadow rounded search">
         <h4 className="text-center">
           Search For Your Plant Below:
