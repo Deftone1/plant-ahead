@@ -5,7 +5,7 @@ function GardenModal(props) {
     const {hideModal, isOpen, title, currentgarden, currentid, removeplantfromgarden} = props;
    
     const plantsingarden = currentgarden.map(plantingarden =>(
-        <div className="d-flex justify-content-between border">
+        <div key={plantingarden._id} className="d-flex justify-content-between border">
         <li className="list-group-item">{plantingarden.name} </li>
         <button className=" btn btn-danger" data-gardenid= {currentid} onClick={() => removeplantfromgarden(currentid, plantingarden._id)}>✗</button>
    </div>
